@@ -13,27 +13,8 @@ namespace WF_NadeznostASU
         public Form1()
         {
             InitializeComponent();
-            //int i = 0;
-            //foreach (var item in elements)
-            //{
-            //    var t = new MyCheckBox { Text = item.name, index = i };
-            //    t.CheckedChanged += onCheck;
-            //    t.CheckedChanged += onCheckBoxUpdate;
-            //    panel2.Controls.Add(t);
-            //    ++i;
-            //}
             nudTime.ValueChanged += onTimeUpdate;
             addCheckBoxes();
-            //var temp = new SplitContainer
-            //{
-            //    Dock = DockStyle.Top,
-            //    Height = labelH,
-            //    SplitterDistance = splitterDistance,
-            //    IsSplitterFixed = true
-            //};
-            //temp.Panel1.Controls.Add(new Label { Text = "Название прибора", Width = labelW });
-            //temp.Panel2.Controls.Add(new Label { Text = "Количество", Width = labelW });
-            //pQty.Controls.Add(temp);
         }
 
         void addCheckBoxes()
@@ -43,7 +24,6 @@ namespace WF_NadeznostASU
             {
                 var t = new MyCheckBox { Text = item.name, index = i };
                 t.CheckedChanged += onCheckBoxUpdate;
-                //t.CheckedChanged += onCheckBoxUpdate;
                 panel2.Controls.Add(t);
                 ++i;
             }
@@ -95,7 +75,6 @@ namespace WF_NadeznostASU
         {
             var chkBx = sender as MyCheckBox;
             if (chkBx == null) return;
-            //MessageBox.Show(chkBx.index.ToString());
             if (chkBx.Checked)
             {
                 selected.Add(chkBx.index);
@@ -107,7 +86,6 @@ namespace WF_NadeznostASU
                     SplitterDistance = splitterDistance,
                     IsSplitterFixed = true
                 };
-                //split.Panel1.Controls.Add(new Label{ Text = elements[chkBx.index].name, Width = labelW });
                 split.Panel1.Controls.Add(new Label{ Text = elements[chkBx.index].name, Dock = DockStyle.Fill });
                 var upDown = new MyNumericUpDown { index = chkBx.index };
                 upDown.ValueChanged += onQtyUpdate;
@@ -119,44 +97,12 @@ namespace WF_NadeznostASU
             }
             else
             {
-                //selected.RemoveAt(selected.FindIndex(x => x.name == chkBx.Text));
                 var i = selected.FindIndex(x => x == chkBx.index);
                 selected.RemoveAt(i);
                 pQty.Controls.RemoveAt(i);
 
                 update(chkBx.index, 0);
             }
-            /* 
-            pQty.Controls.Clear();
-
-            foreach (var item in selected)
-            {
-                var t = new SplitContainer
-                {
-                    Dock = DockStyle.Top,
-                    Height = labelH,
-                    SplitterDistance = splitterDistance,
-                    IsSplitterFixed = true
-                };
-                t.Panel1.Controls.Add(new Label { Text = item.name, Width = labelW });
-                var upDown = new NumericUpDown();
-                upDown.Minimum = 1;
-                upDown.Maximum = 1000;
-                upDown.Width = upDownW;
-                upDown.ValueChanged += onUpdate;
-                t.Panel2.Controls.Add(upDown);
-                pQty.Controls.Add(t);
-            }*/
-            /*var temp = new SplitContainer 
-            {
-                Dock = DockStyle.Top,
-                Height = labelH,
-                SplitterDistance = splitterDistance,
-                IsSplitterFixed = true
-            };
-            temp.Panel1.Controls.Add(new Label { Text = "Название прибора", Width = labelW });
-            temp.Panel2.Controls.Add(new Label { Text = "Количество", Width = labelW });
-            pQty.Controls.Add(temp);*/
         }
 
         void bClear_Click(object sender, EventArgs e)
@@ -169,7 +115,7 @@ namespace WF_NadeznostASU
                 t.CheckedChanged += onCheckBoxUpdate;
             }
             pQty.Controls.Clear();
-            //pQty.Invalidate();
+            //pQty.Invalidate(); // sometimes scrollbar doesn't disappear properly, so forced update might help
             selected.Clear();
             lambdaC = 0;
             update();
