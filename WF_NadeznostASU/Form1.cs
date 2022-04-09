@@ -119,5 +119,15 @@ namespace WF_NadeznostASU
             lambdaC = 0;
             update();
         }
+
+        private void Form1_ResizeBegin(object sender, EventArgs e)
+        {
+            this.SuspendLayout();
+        }
+
+        private void Form1_ResizeEnd(object sender, EventArgs e)
+        {
+            this.ResumeLayout();
+        }
     }
 }

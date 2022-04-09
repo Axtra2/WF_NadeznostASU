@@ -256,6 +256,8 @@
             this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "Form1";
             this.Text = "Надежность систем";
+            this.ResizeBegin += new System.EventHandler(this.Form1_ResizeBegin);
+            this.ResizeEnd += new System.EventHandler(this.Form1_ResizeEnd);
             this.groupBox1.ResumeLayout(false);
             this.Tc.ResumeLayout(false);
             this.Tc.PerformLayout();
