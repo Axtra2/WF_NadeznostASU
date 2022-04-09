@@ -7,7 +7,6 @@ namespace WF_NadeznostASU
 
         const int labelH = 30;
         const int splitterDistance = 130;
-
         double lambdaC = 0;
 
         public Form1()

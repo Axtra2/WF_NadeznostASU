@@ -14,7 +14,7 @@ namespace WF_NadeznostASU
             Dock = DockStyle.Fill;
             Maximum = 1000;
             Minimum = 1;
-            Width = 60;
+            //Width = 45;
         }
     }
 }
