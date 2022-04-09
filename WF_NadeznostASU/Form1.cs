@@ -113,6 +113,10 @@ namespace WF_NadeznostASU
                 t.Checked = false;
                 t.CheckedChanged += onCheckBoxUpdate;
             }
+            foreach (var item in elements)
+            {
+                item.qty = 0;
+            }
             pQty.Controls.Clear();
             //pQty.Invalidate(); // sometimes scrollbar doesn't disappear properly, so forced update might help
             selected.Clear();
