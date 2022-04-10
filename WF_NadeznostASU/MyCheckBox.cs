@@ -12,6 +12,7 @@ namespace WF_NadeznostASU
         public MyCheckBox()
         {
             Dock = DockStyle.Top;
+            AutoEllipsis = true;
         }
     }
 }

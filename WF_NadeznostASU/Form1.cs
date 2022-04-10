@@ -85,7 +85,12 @@ namespace WF_NadeznostASU
                     SplitterDistance = splitterDistance,
                     IsSplitterFixed = true
                 };
-                split.Panel1.Controls.Add(new Label{ Text = elements[chkBx.index].name, Dock = DockStyle.Fill });
+                split.Panel1.Controls.Add(new Label
+                {
+                    Text = elements[chkBx.index].name,
+                    Dock = DockStyle.Fill,
+                    AutoEllipsis = true
+                });
                 var upDown = new MyNumericUpDown { index = chkBx.index };
                 upDown.ValueChanged += onQtyUpdate;
                 split.Panel2.Controls.Add(upDown);
