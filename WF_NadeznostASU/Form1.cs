@@ -19,7 +19,7 @@ namespace WF_NadeznostASU
         void addCheckBoxes()
         {
             int i = 0;
-            foreach (var item in elements)
+            foreach (var item in elements.Reverse<Element>())
             {
                 var t = new MyCheckBox { Text = item.name, index = i };
                 t.CheckedChanged += onCheckBoxUpdate;
