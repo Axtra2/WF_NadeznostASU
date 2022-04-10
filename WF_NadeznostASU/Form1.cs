@@ -18,10 +18,10 @@ namespace WF_NadeznostASU
 
         void addCheckBoxes()
         {
-            int i = 0;
+            int i = 1;
             foreach (var item in elements.Reverse<Element>())
             {
-                var t = new MyCheckBox { Text = item.name, index = i };
+                var t = new MyCheckBox { Text = item.name, index = elements.Count - i };
                 t.CheckedChanged += onCheckBoxUpdate;
                 panel2.Controls.Add(t);
                 ++i;
