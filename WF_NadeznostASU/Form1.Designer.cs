@@ -120,7 +120,7 @@
             this.Tc.Size = new System.Drawing.Size(334, 71);
             this.Tc.TabIndex = 7;
             this.Tc.TabStop = false;
-            this.Tc.Text = "Тср.с =";
+            this.Tc.Text = "Тср.с, ч";
             // 
             // tbPc
             // 
@@ -142,7 +142,7 @@
             this.gbPc.Size = new System.Drawing.Size(337, 71);
             this.gbPc.TabIndex = 7;
             this.gbPc.TabStop = false;
-            this.gbPc.Text = "Pc =";
+            this.gbPc.Text = "Pc";
             // 
             // groupBox2
             // 
