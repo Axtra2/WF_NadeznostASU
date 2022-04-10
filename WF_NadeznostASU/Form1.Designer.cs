@@ -279,9 +279,6 @@
         #endregion
         private Button bClear;
         private GroupBox groupBox1;
-        private Label label1;
-        private Label label2;
-        private TableLayoutPanel tableLayoutPanel1;
         private Panel pQty;
         private Panel panel2;
         private TextBox tbTc;
