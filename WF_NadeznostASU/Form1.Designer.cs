@@ -61,7 +61,7 @@
             // bClear
             // 
             this.bClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bClear.Location = new System.Drawing.Point(231, 150);
+            this.bClear.Location = new System.Drawing.Point(339, 387);
             this.bClear.Name = "bClear";
             this.bClear.Size = new System.Drawing.Size(94, 29);
             this.bClear.TabIndex = 1;
@@ -77,7 +77,7 @@
             this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(322, 144);
+            this.groupBox1.Size = new System.Drawing.Size(428, 378);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Выберите необходимые устройства";
@@ -88,7 +88,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 23);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(316, 118);
+            this.panel2.Size = new System.Drawing.Size(422, 352);
             this.panel2.TabIndex = 0;
             // 
             // pQty
@@ -97,7 +97,7 @@
             this.pQty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pQty.Location = new System.Drawing.Point(3, 23);
             this.pQty.Name = "pQty";
-            this.pQty.Size = new System.Drawing.Size(252, 48);
+            this.pQty.Size = new System.Drawing.Size(334, 275);
             this.pQty.TabIndex = 6;
             // 
             // tbTc
@@ -107,7 +107,7 @@
             this.tbTc.Location = new System.Drawing.Point(6, 27);
             this.tbTc.Name = "tbTc";
             this.tbTc.ReadOnly = true;
-            this.tbTc.Size = new System.Drawing.Size(246, 27);
+            this.tbTc.Size = new System.Drawing.Size(322, 27);
             this.tbTc.TabIndex = 0;
             // 
             // Tc
@@ -115,9 +115,9 @@
             this.Tc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Tc.Controls.Add(this.tbTc);
-            this.Tc.Location = new System.Drawing.Point(3, 160);
+            this.Tc.Location = new System.Drawing.Point(6, 387);
             this.Tc.Name = "Tc";
-            this.Tc.Size = new System.Drawing.Size(258, 71);
+            this.Tc.Size = new System.Drawing.Size(334, 71);
             this.Tc.TabIndex = 7;
             this.Tc.TabStop = false;
             this.Tc.Text = "Тср.с =";
@@ -129,7 +129,7 @@
             this.tbPc.Location = new System.Drawing.Point(6, 27);
             this.tbPc.Name = "tbPc";
             this.tbPc.ReadOnly = true;
-            this.tbPc.Size = new System.Drawing.Size(243, 27);
+            this.tbPc.Size = new System.Drawing.Size(325, 27);
             this.tbPc.TabIndex = 0;
             // 
             // gbPc
@@ -137,9 +137,9 @@
             this.gbPc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbPc.Controls.Add(this.tbPc);
-            this.gbPc.Location = new System.Drawing.Point(3, 83);
+            this.gbPc.Location = new System.Drawing.Point(6, 310);
             this.gbPc.Name = "gbPc";
-            this.gbPc.Size = new System.Drawing.Size(255, 71);
+            this.gbPc.Size = new System.Drawing.Size(337, 71);
             this.gbPc.TabIndex = 7;
             this.gbPc.TabStop = false;
             this.gbPc.Text = "Pc =";
@@ -149,7 +149,7 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.nudTime);
-            this.groupBox2.Location = new System.Drawing.Point(6, 153);
+            this.groupBox2.Location = new System.Drawing.Point(6, 387);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(126, 71);
             this.groupBox2.TabIndex = 7;
@@ -179,7 +179,7 @@
             this.groupBox3.Controls.Add(this.pQty);
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(258, 74);
+            this.groupBox3.Size = new System.Drawing.Size(340, 301);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Введите количество элементов";
@@ -249,8 +249,7 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(800, 502);
             this.Controls.Add(this.tabControl1);
             this.MinimumSize = new System.Drawing.Size(800, 500);
