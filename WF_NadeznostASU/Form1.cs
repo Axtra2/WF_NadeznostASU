@@ -145,7 +145,17 @@ namespace WF_NadeznostASU
             //var t = (double) nudT.Value; // this value is not used but still provided??
             var deltaT = (double)nudDeltaT.Value;
             var nt = (double)nudNt.Value;
-            var nDeltaT = (double)nudNDeltaT.Value;           
+            var nDeltaT = (double)nudNDeltaT.Value;
+
+            const double EPS = 1e-7;
+            if (Nz < EPS || deltaT < EPS || nt + nDeltaT < EPS || nt + nDeltaT > Nz)
+            {
+                tbPt.Text = "";
+                tbPtDeltaT.Text = "";
+                tbAt.Text = "";
+                tbLambdaT.Text = "";
+                return;
+            }
 
             var Pt = (Nz - nt) / Nz;
             var PtDeltaT = (Nz - (nt + nDeltaT)) / Nz;
