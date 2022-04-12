@@ -167,5 +167,22 @@ namespace WF_NadeznostASU
         {
             updateTask2();
         }
+
+        void bClear2_Click(object sender, EventArgs e)
+        {
+            var gbs = tabPage2.Controls.OfType<GroupBox>();
+            var nuds = gbs.SelectMany(gb => gb.Controls.OfType<NumericUpDown>());
+            var tbs = gbs.SelectMany(gb => gb.Controls.OfType<TextBox>());
+
+            foreach (var nud in nuds)
+            {
+                nud.Value = nud.Minimum;
+            }
+
+            foreach (var tb in tbs)
+            {
+                tb.Text = "";
+            }
+        }
     }
 }
