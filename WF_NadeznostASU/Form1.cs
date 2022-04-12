@@ -138,5 +138,34 @@ namespace WF_NadeznostASU
         {
             this.ResumeLayout();
         }
+
+        void updateTask2()
+        {
+            var Nz = (double)nudNz.Value;
+            var t = (double) nudT.Value;
+            var deltaT = (double)nudDeltaT.Value;
+            var nt = (double)nudNt.Value;
+            var nDeltaT = (double)nudNDeltaT.Value;           
+
+            var Pt = (Nz - nt) / Nz;
+            var PtDeltaT = (Nz - (nt + nDeltaT)) / Nz;
+
+            var Nm = (nt + nDeltaT) / 2;
+            //var nm = Nz - Nm;
+
+            var aT = nDeltaT / (Nz * deltaT);
+            var lambdaT = nDeltaT / (Nm * deltaT);
+
+            tbPt.Text = Pt.ToString();
+            tbPtDeltaT.Text = PtDeltaT.ToString();
+            tbAt.Text = aT.ToString();
+            tbLambdaT.Text = lambdaT.ToString();
+
+        }
+
+        void onInputUpdate(object sender, EventArgs e)
+        {
+            updateTask2();
+        }
     }
 }
