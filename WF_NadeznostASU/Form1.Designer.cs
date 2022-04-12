@@ -43,6 +43,7 @@
             this.nudTime = new System.Windows.Forms.NumericUpDown();
             this.bClear = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.bClear2 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.tbLambdaT = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -62,7 +63,6 @@
             this.gbNz = new System.Windows.Forms.GroupBox();
             this.nudNz = new System.Windows.Forms.NumericUpDown();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.bClear2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -107,10 +107,10 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.splitContainer1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(792, 474);
+            this.tabPage1.Size = new System.Drawing.Size(792, 469);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Задача 1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -132,7 +132,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
             this.splitContainer1.Panel2.Controls.Add(this.bClear);
-            this.splitContainer1.Size = new System.Drawing.Size(786, 468);
+            this.splitContainer1.Size = new System.Drawing.Size(786, 463);
             this.splitContainer1.SplitterDistance = 346;
             this.splitContainer1.TabIndex = 9;
             // 
@@ -144,7 +144,7 @@
             this.groupBox3.Controls.Add(this.pQty);
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(340, 306);
+            this.groupBox3.Size = new System.Drawing.Size(340, 301);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Введите количество элементов";
@@ -153,9 +153,9 @@
             // 
             this.pQty.AutoScroll = true;
             this.pQty.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pQty.Location = new System.Drawing.Point(3, 19);
+            this.pQty.Location = new System.Drawing.Point(3, 23);
             this.pQty.Name = "pQty";
-            this.pQty.Size = new System.Drawing.Size(334, 284);
+            this.pQty.Size = new System.Drawing.Size(334, 275);
             this.pQty.TabIndex = 6;
             // 
             // gbPc
@@ -163,7 +163,7 @@
             this.gbPc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbPc.Controls.Add(this.tbPc);
-            this.gbPc.Location = new System.Drawing.Point(6, 315);
+            this.gbPc.Location = new System.Drawing.Point(6, 310);
             this.gbPc.Name = "gbPc";
             this.gbPc.Size = new System.Drawing.Size(337, 71);
             this.gbPc.TabIndex = 7;
@@ -177,7 +177,7 @@
             this.tbPc.Location = new System.Drawing.Point(6, 27);
             this.tbPc.Name = "tbPc";
             this.tbPc.ReadOnly = true;
-            this.tbPc.Size = new System.Drawing.Size(325, 23);
+            this.tbPc.Size = new System.Drawing.Size(325, 27);
             this.tbPc.TabIndex = 0;
             // 
             // Tc
@@ -185,7 +185,7 @@
             this.Tc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Tc.Controls.Add(this.tbTc);
-            this.Tc.Location = new System.Drawing.Point(6, 392);
+            this.Tc.Location = new System.Drawing.Point(6, 387);
             this.Tc.Name = "Tc";
             this.Tc.Size = new System.Drawing.Size(334, 71);
             this.Tc.TabIndex = 7;
@@ -199,7 +199,7 @@
             this.tbTc.Location = new System.Drawing.Point(6, 27);
             this.tbTc.Name = "tbTc";
             this.tbTc.ReadOnly = true;
-            this.tbTc.Size = new System.Drawing.Size(322, 23);
+            this.tbTc.Size = new System.Drawing.Size(322, 27);
             this.tbTc.TabIndex = 0;
             // 
             // groupBox1
@@ -210,7 +210,7 @@
             this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(428, 383);
+            this.groupBox1.Size = new System.Drawing.Size(428, 378);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Выберите необходимые устройства";
@@ -219,16 +219,16 @@
             // 
             this.panel2.AutoScroll = true;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 19);
+            this.panel2.Location = new System.Drawing.Point(3, 23);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(422, 361);
+            this.panel2.Size = new System.Drawing.Size(422, 352);
             this.panel2.TabIndex = 0;
             // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox2.Controls.Add(this.nudTime);
-            this.groupBox2.Location = new System.Drawing.Point(6, 392);
+            this.groupBox2.Location = new System.Drawing.Point(6, 387);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(126, 71);
             this.groupBox2.TabIndex = 7;
@@ -247,13 +247,13 @@
             0,
             0});
             this.nudTime.Name = "nudTime";
-            this.nudTime.Size = new System.Drawing.Size(114, 23);
+            this.nudTime.Size = new System.Drawing.Size(114, 27);
             this.nudTime.TabIndex = 0;
             // 
             // bClear
             // 
             this.bClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bClear.Location = new System.Drawing.Point(339, 392);
+            this.bClear.Location = new System.Drawing.Point(339, 387);
             this.bClear.Name = "bClear";
             this.bClear.Size = new System.Drawing.Size(94, 29);
             this.bClear.TabIndex = 1;
@@ -273,13 +273,23 @@
             this.tabPage2.Controls.Add(this.dbDeltaT);
             this.tabPage2.Controls.Add(this.gbT);
             this.tabPage2.Controls.Add(this.gbNz);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(792, 474);
+            this.tabPage2.Size = new System.Drawing.Size(792, 469);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Задача 2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // bClear2
+            // 
+            this.bClear2.Location = new System.Drawing.Point(73, 393);
+            this.bClear2.Name = "bClear2";
+            this.bClear2.Size = new System.Drawing.Size(94, 29);
+            this.bClear2.TabIndex = 12;
+            this.bClear2.Text = "Очистить";
+            this.bClear2.UseVisualStyleBackColor = true;
+            this.bClear2.Click += new System.EventHandler(this.bClear2_Click);
             // 
             // groupBox6
             // 
@@ -300,7 +310,7 @@
             this.tbLambdaT.Location = new System.Drawing.Point(6, 27);
             this.tbLambdaT.Name = "tbLambdaT";
             this.tbLambdaT.ReadOnly = true;
-            this.tbLambdaT.Size = new System.Drawing.Size(325, 23);
+            this.tbLambdaT.Size = new System.Drawing.Size(325, 27);
             this.tbLambdaT.TabIndex = 0;
             // 
             // groupBox5
@@ -322,7 +332,7 @@
             this.tbPtDeltaT.Location = new System.Drawing.Point(6, 27);
             this.tbPtDeltaT.Name = "tbPtDeltaT";
             this.tbPtDeltaT.ReadOnly = true;
-            this.tbPtDeltaT.Size = new System.Drawing.Size(325, 23);
+            this.tbPtDeltaT.Size = new System.Drawing.Size(325, 27);
             this.tbPtDeltaT.TabIndex = 0;
             // 
             // groupBox7
@@ -344,7 +354,7 @@
             this.tbAt.Location = new System.Drawing.Point(6, 27);
             this.tbAt.Name = "tbAt";
             this.tbAt.ReadOnly = true;
-            this.tbAt.Size = new System.Drawing.Size(325, 23);
+            this.tbAt.Size = new System.Drawing.Size(325, 27);
             this.tbAt.TabIndex = 0;
             // 
             // groupBox4
@@ -366,7 +376,7 @@
             this.tbPt.Location = new System.Drawing.Point(6, 27);
             this.tbPt.Name = "tbPt";
             this.tbPt.ReadOnly = true;
-            this.tbPt.Size = new System.Drawing.Size(325, 23);
+            this.tbPt.Size = new System.Drawing.Size(325, 27);
             this.tbPt.TabIndex = 0;
             // 
             // gbNDeltaT
@@ -388,7 +398,7 @@
             0,
             0});
             this.nudNDeltaT.Name = "nudNDeltaT";
-            this.nudNDeltaT.Size = new System.Drawing.Size(82, 23);
+            this.nudNDeltaT.Size = new System.Drawing.Size(82, 27);
             this.nudNDeltaT.TabIndex = 0;
             this.nudNDeltaT.ValueChanged += new System.EventHandler(this.onInputUpdate);
             // 
@@ -411,7 +421,7 @@
             0,
             0});
             this.nudNt.Name = "nudNt";
-            this.nudNt.Size = new System.Drawing.Size(82, 23);
+            this.nudNt.Size = new System.Drawing.Size(82, 27);
             this.nudNt.TabIndex = 0;
             this.nudNt.ValueChanged += new System.EventHandler(this.onInputUpdate);
             // 
@@ -434,7 +444,7 @@
             0,
             0});
             this.nudDeltaT.Name = "nudDeltaT";
-            this.nudDeltaT.Size = new System.Drawing.Size(82, 23);
+            this.nudDeltaT.Size = new System.Drawing.Size(82, 27);
             this.nudDeltaT.TabIndex = 0;
             this.nudDeltaT.ValueChanged += new System.EventHandler(this.onInputUpdate);
             // 
@@ -457,7 +467,7 @@
             0,
             0});
             this.nudT.Name = "nudT";
-            this.nudT.Size = new System.Drawing.Size(82, 23);
+            this.nudT.Size = new System.Drawing.Size(82, 27);
             this.nudT.TabIndex = 0;
             this.nudT.ValueChanged += new System.EventHandler(this.onInputUpdate);
             // 
@@ -480,29 +490,18 @@
             0,
             0});
             this.nudNz.Name = "nudNz";
-            this.nudNz.Size = new System.Drawing.Size(82, 23);
+            this.nudNz.Size = new System.Drawing.Size(82, 27);
             this.nudNz.TabIndex = 0;
             this.nudNz.ValueChanged += new System.EventHandler(this.onInputUpdate);
             // 
             // tabPage3
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 24);
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(792, 474);
+            this.tabPage3.Size = new System.Drawing.Size(792, 469);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Задача 3";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // bClear2
-            // 
-            this.bClear2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bClear2.Location = new System.Drawing.Point(73, 398);
-            this.bClear2.Name = "bClear2";
-            this.bClear2.Size = new System.Drawing.Size(94, 29);
-            this.bClear2.TabIndex = 12;
-            this.bClear2.Text = "Очистить";
-            this.bClear2.UseVisualStyleBackColor = true;
-            this.bClear2.Click += new System.EventHandler(this.bClear2_Click);
             // 
             // Form1
             // 
