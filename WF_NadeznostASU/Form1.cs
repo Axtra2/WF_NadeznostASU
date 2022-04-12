@@ -142,7 +142,7 @@ namespace WF_NadeznostASU
         void updateTask2()
         {
             var Nz = (double)nudNz.Value;
-            var t = (double) nudT.Value;
+            //var t = (double) nudT.Value; // this value is not used but still provided??
             var deltaT = (double)nudDeltaT.Value;
             var nt = (double)nudNt.Value;
             var nDeltaT = (double)nudNDeltaT.Value;           
@@ -151,7 +151,7 @@ namespace WF_NadeznostASU
             var PtDeltaT = (Nz - (nt + nDeltaT)) / Nz;
 
             var Nm = (nt + nDeltaT) / 2;
-            //var nm = Nz - Nm;
+            //var nm = Nz - Nm; // this value is not used as well
 
             var aT = nDeltaT / (Nz * deltaT);
             var lambdaT = nDeltaT / (Nm * deltaT);
