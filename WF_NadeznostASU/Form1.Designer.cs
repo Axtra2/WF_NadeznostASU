@@ -63,6 +63,25 @@
             this.gbNz = new System.Windows.Forms.GroupBox();
             this.nudNz = new System.Windows.Forms.NumericUpDown();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.bT3Gen = new System.Windows.Forms.Button();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.tbT3Tcp = new System.Windows.Forms.TextBox();
+            this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.nudT3N4 = new System.Windows.Forms.NumericUpDown();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.nudT3L4 = new System.Windows.Forms.NumericUpDown();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.nudT3N3 = new System.Windows.Forms.NumericUpDown();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.nudT3L3 = new System.Windows.Forms.NumericUpDown();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.nudT3N2 = new System.Windows.Forms.NumericUpDown();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.nudT3L2 = new System.Windows.Forms.NumericUpDown();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.nudT3N1 = new System.Windows.Forms.NumericUpDown();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.nudT3L1 = new System.Windows.Forms.NumericUpDown();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -90,6 +109,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudT)).BeginInit();
             this.gbNz.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNz)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            this.groupBox12.SuspendLayout();
+            this.groupBox16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudT3N4)).BeginInit();
+            this.groupBox11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudT3L4)).BeginInit();
+            this.groupBox15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudT3N3)).BeginInit();
+            this.groupBox10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudT3L3)).BeginInit();
+            this.groupBox14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudT3N2)).BeginInit();
+            this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudT3L2)).BeginInit();
+            this.groupBox13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudT3N1)).BeginInit();
+            this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudT3L1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -496,12 +533,287 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.bT3Gen);
+            this.tabPage3.Controls.Add(this.groupBox12);
+            this.tabPage3.Controls.Add(this.groupBox16);
+            this.tabPage3.Controls.Add(this.groupBox11);
+            this.tabPage3.Controls.Add(this.groupBox15);
+            this.tabPage3.Controls.Add(this.groupBox10);
+            this.tabPage3.Controls.Add(this.groupBox14);
+            this.tabPage3.Controls.Add(this.groupBox9);
+            this.tabPage3.Controls.Add(this.groupBox13);
+            this.tabPage3.Controls.Add(this.groupBox8);
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(792, 469);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Задача 3";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // bT3Gen
+            // 
+            this.bT3Gen.Location = new System.Drawing.Point(8, 15);
+            this.bT3Gen.Name = "bT3Gen";
+            this.bT3Gen.Size = new System.Drawing.Size(314, 29);
+            this.bT3Gen.TabIndex = 10;
+            this.bT3Gen.Text = "Сгенерировать значения";
+            this.bT3Gen.UseVisualStyleBackColor = true;
+            this.bT3Gen.Click += new System.EventHandler(this.bT3Gen_Click);
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.tbT3Tcp);
+            this.groupBox12.Location = new System.Drawing.Point(11, 319);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(308, 71);
+            this.groupBox12.TabIndex = 9;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Tcp";
+            // 
+            // tbT3Tcp
+            // 
+            this.tbT3Tcp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbT3Tcp.Location = new System.Drawing.Point(3, 23);
+            this.tbT3Tcp.Name = "tbT3Tcp";
+            this.tbT3Tcp.ReadOnly = true;
+            this.tbT3Tcp.Size = new System.Drawing.Size(302, 27);
+            this.tbT3Tcp.TabIndex = 0;
+            // 
+            // groupBox16
+            // 
+            this.groupBox16.Controls.Add(this.nudT3N4);
+            this.groupBox16.Location = new System.Drawing.Point(176, 253);
+            this.groupBox16.Name = "groupBox16";
+            this.groupBox16.Size = new System.Drawing.Size(146, 60);
+            this.groupBox16.TabIndex = 1;
+            this.groupBox16.TabStop = false;
+            this.groupBox16.Text = "N4";
+            // 
+            // nudT3N4
+            // 
+            this.nudT3N4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nudT3N4.Location = new System.Drawing.Point(3, 23);
+            this.nudT3N4.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.nudT3N4.Name = "nudT3N4";
+            this.nudT3N4.Size = new System.Drawing.Size(140, 27);
+            this.nudT3N4.TabIndex = 0;
+            this.nudT3N4.ValueChanged += new System.EventHandler(this.onTask3InputUpdate);
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.nudT3L4);
+            this.groupBox11.Location = new System.Drawing.Point(8, 253);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(146, 60);
+            this.groupBox11.TabIndex = 1;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Lambda 4";
+            // 
+            // nudT3L4
+            // 
+            this.nudT3L4.DecimalPlaces = 6;
+            this.nudT3L4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nudT3L4.Location = new System.Drawing.Point(3, 23);
+            this.nudT3L4.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nudT3L4.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            393216});
+            this.nudT3L4.Name = "nudT3L4";
+            this.nudT3L4.Size = new System.Drawing.Size(140, 27);
+            this.nudT3L4.TabIndex = 0;
+            this.nudT3L4.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            393216});
+            this.nudT3L4.ValueChanged += new System.EventHandler(this.onTask3InputUpdate);
+            // 
+            // groupBox15
+            // 
+            this.groupBox15.Controls.Add(this.nudT3N3);
+            this.groupBox15.Location = new System.Drawing.Point(176, 187);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(146, 60);
+            this.groupBox15.TabIndex = 1;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "N3";
+            // 
+            // nudT3N3
+            // 
+            this.nudT3N3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nudT3N3.Location = new System.Drawing.Point(3, 23);
+            this.nudT3N3.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.nudT3N3.Name = "nudT3N3";
+            this.nudT3N3.Size = new System.Drawing.Size(140, 27);
+            this.nudT3N3.TabIndex = 0;
+            this.nudT3N3.ValueChanged += new System.EventHandler(this.onTask3InputUpdate);
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.nudT3L3);
+            this.groupBox10.Location = new System.Drawing.Point(8, 187);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(146, 60);
+            this.groupBox10.TabIndex = 1;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Lambda 3";
+            // 
+            // nudT3L3
+            // 
+            this.nudT3L3.DecimalPlaces = 6;
+            this.nudT3L3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nudT3L3.Location = new System.Drawing.Point(3, 23);
+            this.nudT3L3.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nudT3L3.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            393216});
+            this.nudT3L3.Name = "nudT3L3";
+            this.nudT3L3.Size = new System.Drawing.Size(140, 27);
+            this.nudT3L3.TabIndex = 0;
+            this.nudT3L3.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            393216});
+            this.nudT3L3.ValueChanged += new System.EventHandler(this.onTask3InputUpdate);
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.Controls.Add(this.nudT3N2);
+            this.groupBox14.Location = new System.Drawing.Point(176, 121);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(146, 60);
+            this.groupBox14.TabIndex = 1;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "N2";
+            // 
+            // nudT3N2
+            // 
+            this.nudT3N2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nudT3N2.Location = new System.Drawing.Point(3, 23);
+            this.nudT3N2.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.nudT3N2.Name = "nudT3N2";
+            this.nudT3N2.Size = new System.Drawing.Size(140, 27);
+            this.nudT3N2.TabIndex = 0;
+            this.nudT3N2.ValueChanged += new System.EventHandler(this.onTask3InputUpdate);
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.nudT3L2);
+            this.groupBox9.Location = new System.Drawing.Point(8, 121);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(146, 60);
+            this.groupBox9.TabIndex = 1;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Lambda 2";
+            // 
+            // nudT3L2
+            // 
+            this.nudT3L2.DecimalPlaces = 6;
+            this.nudT3L2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nudT3L2.Location = new System.Drawing.Point(3, 23);
+            this.nudT3L2.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nudT3L2.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            393216});
+            this.nudT3L2.Name = "nudT3L2";
+            this.nudT3L2.Size = new System.Drawing.Size(140, 27);
+            this.nudT3L2.TabIndex = 0;
+            this.nudT3L2.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            393216});
+            this.nudT3L2.ValueChanged += new System.EventHandler(this.onTask3InputUpdate);
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.nudT3N1);
+            this.groupBox13.Location = new System.Drawing.Point(176, 55);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(146, 60);
+            this.groupBox13.TabIndex = 1;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "N1";
+            // 
+            // nudT3N1
+            // 
+            this.nudT3N1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nudT3N1.Location = new System.Drawing.Point(3, 23);
+            this.nudT3N1.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.nudT3N1.Name = "nudT3N1";
+            this.nudT3N1.Size = new System.Drawing.Size(140, 27);
+            this.nudT3N1.TabIndex = 0;
+            this.nudT3N1.ValueChanged += new System.EventHandler(this.onTask3InputUpdate);
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.nudT3L1);
+            this.groupBox8.Location = new System.Drawing.Point(8, 55);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(146, 60);
+            this.groupBox8.TabIndex = 1;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Lambda 1";
+            // 
+            // nudT3L1
+            // 
+            this.nudT3L1.DecimalPlaces = 6;
+            this.nudT3L1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nudT3L1.Location = new System.Drawing.Point(3, 23);
+            this.nudT3L1.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nudT3L1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            393216});
+            this.nudT3L1.Name = "nudT3L1";
+            this.nudT3L1.Size = new System.Drawing.Size(140, 27);
+            this.nudT3L1.TabIndex = 0;
+            this.nudT3L1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            393216});
+            this.nudT3L1.ValueChanged += new System.EventHandler(this.onTask3InputUpdate);
             // 
             // Form1
             // 
@@ -546,6 +858,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudT)).EndInit();
             this.gbNz.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudNz)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            this.groupBox16.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudT3N4)).EndInit();
+            this.groupBox11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudT3L4)).EndInit();
+            this.groupBox15.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudT3N3)).EndInit();
+            this.groupBox10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudT3L3)).EndInit();
+            this.groupBox14.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudT3N2)).EndInit();
+            this.groupBox9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudT3L2)).EndInit();
+            this.groupBox13.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudT3N1)).EndInit();
+            this.groupBox8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudT3L1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -586,5 +917,24 @@
         private GroupBox groupBox4;
         private TextBox tbPt;
         private Button bClear2;
+        private GroupBox groupBox12;
+        private TextBox tbT3Tcp;
+        private GroupBox groupBox11;
+        private NumericUpDown nudT3L4;
+        private GroupBox groupBox10;
+        private NumericUpDown nudT3L3;
+        private GroupBox groupBox9;
+        private NumericUpDown nudT3L2;
+        private GroupBox groupBox8;
+        private NumericUpDown nudT3L1;
+        private GroupBox groupBox16;
+        private NumericUpDown nudT3N4;
+        private GroupBox groupBox15;
+        private NumericUpDown nudT3N3;
+        private GroupBox groupBox14;
+        private NumericUpDown nudT3N2;
+        private GroupBox groupBox13;
+        private NumericUpDown nudT3N1;
+        private Button bT3Gen;
     }
 }
