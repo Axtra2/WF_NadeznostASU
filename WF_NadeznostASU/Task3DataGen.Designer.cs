@@ -49,12 +49,12 @@
             this.groupBox13.Size = new System.Drawing.Size(290, 60);
             this.groupBox13.TabIndex = 2;
             this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "N1";
+            this.groupBox13.Text = "N1 (последняя цифра шифра)";
             // 
             // nudT3GenN1
             // 
             this.nudT3GenN1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nudT3GenN1.Location = new System.Drawing.Point(3, 23);
+            this.nudT3GenN1.Location = new System.Drawing.Point(3, 19);
             this.nudT3GenN1.Maximum = new decimal(new int[] {
             10,
             0,
@@ -66,7 +66,7 @@
             0,
             0});
             this.nudT3GenN1.Name = "nudT3GenN1";
-            this.nudT3GenN1.Size = new System.Drawing.Size(284, 27);
+            this.nudT3GenN1.Size = new System.Drawing.Size(284, 23);
             this.nudT3GenN1.TabIndex = 0;
             this.nudT3GenN1.Value = new decimal(new int[] {
             1,
@@ -84,12 +84,12 @@
             this.groupBox1.Size = new System.Drawing.Size(290, 60);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "N2";
+            this.groupBox1.Text = "N2 (предпоследняя цифра шифра)";
             // 
             // nudT3GenN2
             // 
             this.nudT3GenN2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nudT3GenN2.Location = new System.Drawing.Point(3, 23);
+            this.nudT3GenN2.Location = new System.Drawing.Point(3, 19);
             this.nudT3GenN2.Maximum = new decimal(new int[] {
             10,
             0,
@@ -101,7 +101,7 @@
             0,
             0});
             this.nudT3GenN2.Name = "nudT3GenN2";
-            this.nudT3GenN2.Size = new System.Drawing.Size(284, 27);
+            this.nudT3GenN2.Size = new System.Drawing.Size(284, 23);
             this.nudT3GenN2.TabIndex = 0;
             this.nudT3GenN2.Tag = "";
             this.nudT3GenN2.Value = new decimal(new int[] {
