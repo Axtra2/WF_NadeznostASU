@@ -233,7 +233,7 @@ namespace WF_NadeznostASU
             {
                 double[] lambdas;
                 uint[]   layers;
-                Task3.GenData((uint)gen.nudT3GenN1.Value, (uint)gen.nudT3GenN1.Value, out lambdas, out layers);
+                Task3.GenData((uint)gen.nudT3GenN1.Value, (uint)gen.nudT3GenN2.Value, out lambdas, out layers);
                 nudT3L1.Value = (decimal)lambdas[0];
                 nudT3L2.Value = (decimal)lambdas[1];
                 nudT3L3.Value = (decimal)lambdas[2];
