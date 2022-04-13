@@ -54,6 +54,31 @@ namespace WF_NadeznostASU
             }
         }
 
+        private static double P(double lambda, double t)
+        {
+            return Math.Exp(-1 * lambda * t);
+        }
+
+        private static double Pl(double lambda, double t, double layer)
+        {
+            return 1 - Math.Pow(1 - P(lambda, t), layer);
+        }
+
+        public static double CalcPc(in double[] lambdas, in uint[] layers, double t)
+        {
+            int l = layers.Length;
+            if (lambdas.Length != l) throw new ArgumentException();
+            if (l < 1) throw new ArgumentException();
+
+            double[] Ps = new double[l];
+            for (int i = 0; i < l; i++)
+            {
+                Ps[i] = Pl(lambdas[i], t, layers[i]);
+            }
+
+            return Ps.Aggregate(1.0, (a, b) => a * b);
+        }
+
         public static double CalcT(in double[] lambdas, in uint[] layers)
         {
             int l = layers.Length;

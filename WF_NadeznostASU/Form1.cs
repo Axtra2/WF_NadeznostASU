@@ -215,9 +215,16 @@ namespace WF_NadeznostASU
                 }
             }
             if (lambdas.Count > 0)
+            {
+                const double T = 100;
                 tbT3Tcp.Text = Task3.CalcT(lambdas.ToArray(), layers.ToArray()).ToString();
+                tbT3Pc.Text = Task3.CalcPc(lambdas.ToArray(), layers.ToArray(), T).ToString();
+            }
             else
+            {
                 tbT3Tcp.Text = "";
+                tbT3Pc.Text = "";
+            }
         }
 
         void onTask3InputUpdate(object sender, EventArgs e)
