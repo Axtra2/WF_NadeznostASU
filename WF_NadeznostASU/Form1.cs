@@ -21,7 +21,7 @@ namespace WF_NadeznostASU
             int i = 1;
             foreach (var item in elements.Reverse<Element>())
             {
-                var t = new MyCheckBox { Text = item.name, index = elements.Count - i };
+                var t = new MyCheckBox { Text = item.name, index = elements.Count - i, TabStop = false };
                 t.CheckedChanged += onCheckBoxUpdate;
                 panel2.Controls.Add(t);
                 ++i;

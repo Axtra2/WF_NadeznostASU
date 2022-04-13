@@ -63,6 +63,8 @@
             this.gbNz = new System.Windows.Forms.GroupBox();
             this.nudNz = new System.Windows.Forms.NumericUpDown();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.tbT3Pc = new System.Windows.Forms.TextBox();
             this.bT3Gen = new System.Windows.Forms.Button();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.tbT3Tcp = new System.Windows.Forms.TextBox();
@@ -82,8 +84,6 @@
             this.nudT3N1 = new System.Windows.Forms.NumericUpDown();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.nudT3L1 = new System.Windows.Forms.NumericUpDown();
-            this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.tbT3Pc = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -112,6 +112,7 @@
             this.gbNz.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNz)).BeginInit();
             this.tabPage3.SuspendLayout();
+            this.groupBox17.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudT3N4)).BeginInit();
@@ -129,7 +130,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudT3N1)).BeginInit();
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudT3L1)).BeginInit();
-            this.groupBox17.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -143,6 +143,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(800, 502);
             this.tabControl1.TabIndex = 10;
+            this.tabControl1.TabStop = false;
             // 
             // tabPage1
             // 
@@ -175,6 +176,7 @@
             this.splitContainer1.Size = new System.Drawing.Size(786, 468);
             this.splitContainer1.SplitterDistance = 346;
             this.splitContainer1.TabIndex = 9;
+            this.splitContainer1.TabStop = false;
             // 
             // groupBox3
             // 
@@ -219,6 +221,7 @@
             this.tbPc.ReadOnly = true;
             this.tbPc.Size = new System.Drawing.Size(325, 23);
             this.tbPc.TabIndex = 0;
+            this.tbPc.TabStop = false;
             // 
             // Tc
             // 
@@ -241,6 +244,7 @@
             this.tbTc.ReadOnly = true;
             this.tbTc.Size = new System.Drawing.Size(322, 23);
             this.tbTc.TabIndex = 0;
+            this.tbTc.TabStop = false;
             // 
             // groupBox1
             // 
@@ -271,7 +275,7 @@
             this.groupBox2.Location = new System.Drawing.Point(6, 392);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(126, 71);
-            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Время, ч";
             // 
@@ -326,7 +330,7 @@
             this.bClear2.Location = new System.Drawing.Point(73, 393);
             this.bClear2.Name = "bClear2";
             this.bClear2.Size = new System.Drawing.Size(94, 29);
-            this.bClear2.TabIndex = 12;
+            this.bClear2.TabIndex = 5;
             this.bClear2.Text = "Очистить";
             this.bClear2.UseVisualStyleBackColor = true;
             this.bClear2.Click += new System.EventHandler(this.bClear2_Click);
@@ -352,6 +356,7 @@
             this.tbLambdaT.ReadOnly = true;
             this.tbLambdaT.Size = new System.Drawing.Size(325, 23);
             this.tbLambdaT.TabIndex = 0;
+            this.tbLambdaT.TabStop = false;
             // 
             // groupBox5
             // 
@@ -374,6 +379,7 @@
             this.tbPtDeltaT.ReadOnly = true;
             this.tbPtDeltaT.Size = new System.Drawing.Size(325, 23);
             this.tbPtDeltaT.TabIndex = 0;
+            this.tbPtDeltaT.TabStop = false;
             // 
             // groupBox7
             // 
@@ -396,6 +402,7 @@
             this.tbAt.ReadOnly = true;
             this.tbAt.Size = new System.Drawing.Size(325, 23);
             this.tbAt.TabIndex = 0;
+            this.tbAt.TabStop = false;
             // 
             // groupBox4
             // 
@@ -418,6 +425,7 @@
             this.tbPt.ReadOnly = true;
             this.tbPt.Size = new System.Drawing.Size(325, 23);
             this.tbPt.TabIndex = 0;
+            this.tbPt.TabStop = false;
             // 
             // gbNDeltaT
             // 
@@ -425,7 +433,7 @@
             this.gbNDeltaT.Location = new System.Drawing.Point(66, 311);
             this.gbNDeltaT.Name = "gbNDeltaT";
             this.gbNDeltaT.Size = new System.Drawing.Size(107, 60);
-            this.gbNDeltaT.TabIndex = 1;
+            this.gbNDeltaT.TabIndex = 4;
             this.gbNDeltaT.TabStop = false;
             this.gbNDeltaT.Text = "n(delta t)";
             // 
@@ -448,7 +456,7 @@
             this.gbNt.Location = new System.Drawing.Point(66, 245);
             this.gbNt.Name = "gbNt";
             this.gbNt.Size = new System.Drawing.Size(107, 60);
-            this.gbNt.TabIndex = 1;
+            this.gbNt.TabIndex = 3;
             this.gbNt.TabStop = false;
             this.gbNt.Text = "n(t)";
             // 
@@ -471,7 +479,7 @@
             this.dbDeltaT.Location = new System.Drawing.Point(66, 179);
             this.dbDeltaT.Name = "dbDeltaT";
             this.dbDeltaT.Size = new System.Drawing.Size(107, 60);
-            this.dbDeltaT.TabIndex = 1;
+            this.dbDeltaT.TabIndex = 2;
             this.dbDeltaT.TabStop = false;
             this.dbDeltaT.Text = "Delta t";
             // 
@@ -554,12 +562,32 @@
             this.tabPage3.Text = "Задача 3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // groupBox17
+            // 
+            this.groupBox17.Controls.Add(this.tbT3Pc);
+            this.groupBox17.Location = new System.Drawing.Point(399, 132);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(308, 71);
+            this.groupBox17.TabIndex = 10;
+            this.groupBox17.TabStop = false;
+            this.groupBox17.Text = "Pc(100)";
+            // 
+            // tbT3Pc
+            // 
+            this.tbT3Pc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbT3Pc.Location = new System.Drawing.Point(3, 19);
+            this.tbT3Pc.Name = "tbT3Pc";
+            this.tbT3Pc.ReadOnly = true;
+            this.tbT3Pc.Size = new System.Drawing.Size(302, 23);
+            this.tbT3Pc.TabIndex = 0;
+            this.tbT3Pc.TabStop = false;
+            // 
             // bT3Gen
             // 
             this.bT3Gen.Location = new System.Drawing.Point(8, 15);
             this.bT3Gen.Name = "bT3Gen";
             this.bT3Gen.Size = new System.Drawing.Size(314, 29);
-            this.bT3Gen.TabIndex = 10;
+            this.bT3Gen.TabIndex = 0;
             this.bT3Gen.Text = "Сгенерировать значения";
             this.bT3Gen.UseVisualStyleBackColor = true;
             this.bT3Gen.Click += new System.EventHandler(this.bT3Gen_Click);
@@ -582,6 +610,7 @@
             this.tbT3Tcp.ReadOnly = true;
             this.tbT3Tcp.Size = new System.Drawing.Size(302, 23);
             this.tbT3Tcp.TabIndex = 0;
+            this.tbT3Tcp.TabStop = false;
             // 
             // groupBox16
             // 
@@ -589,7 +618,7 @@
             this.groupBox16.Location = new System.Drawing.Point(176, 253);
             this.groupBox16.Name = "groupBox16";
             this.groupBox16.Size = new System.Drawing.Size(146, 60);
-            this.groupBox16.TabIndex = 1;
+            this.groupBox16.TabIndex = 8;
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "N4";
             // 
@@ -613,7 +642,7 @@
             this.groupBox11.Location = new System.Drawing.Point(8, 253);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(146, 60);
-            this.groupBox11.TabIndex = 1;
+            this.groupBox11.TabIndex = 7;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Lambda 4";
             // 
@@ -648,7 +677,7 @@
             this.groupBox15.Location = new System.Drawing.Point(176, 187);
             this.groupBox15.Name = "groupBox15";
             this.groupBox15.Size = new System.Drawing.Size(146, 60);
-            this.groupBox15.TabIndex = 1;
+            this.groupBox15.TabIndex = 6;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "N3";
             // 
@@ -672,7 +701,7 @@
             this.groupBox10.Location = new System.Drawing.Point(8, 187);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(146, 60);
-            this.groupBox10.TabIndex = 1;
+            this.groupBox10.TabIndex = 5;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Lambda 3";
             // 
@@ -707,7 +736,7 @@
             this.groupBox14.Location = new System.Drawing.Point(176, 121);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Size = new System.Drawing.Size(146, 60);
-            this.groupBox14.TabIndex = 1;
+            this.groupBox14.TabIndex = 4;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "N2";
             // 
@@ -731,7 +760,7 @@
             this.groupBox9.Location = new System.Drawing.Point(8, 121);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(146, 60);
-            this.groupBox9.TabIndex = 1;
+            this.groupBox9.TabIndex = 3;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Lambda 2";
             // 
@@ -766,7 +795,7 @@
             this.groupBox13.Location = new System.Drawing.Point(176, 55);
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.Size = new System.Drawing.Size(146, 60);
-            this.groupBox13.TabIndex = 1;
+            this.groupBox13.TabIndex = 2;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "N1";
             // 
@@ -819,25 +848,6 @@
             393216});
             this.nudT3L1.ValueChanged += new System.EventHandler(this.onTask3InputUpdate);
             // 
-            // groupBox17
-            // 
-            this.groupBox17.Controls.Add(this.tbT3Pc);
-            this.groupBox17.Location = new System.Drawing.Point(399, 132);
-            this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(308, 71);
-            this.groupBox17.TabIndex = 10;
-            this.groupBox17.TabStop = false;
-            this.groupBox17.Text = "Pc(100)";
-            // 
-            // tbT3Pc
-            // 
-            this.tbT3Pc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbT3Pc.Location = new System.Drawing.Point(3, 19);
-            this.tbT3Pc.Name = "tbT3Pc";
-            this.tbT3Pc.ReadOnly = true;
-            this.tbT3Pc.Size = new System.Drawing.Size(302, 23);
-            this.tbT3Pc.TabIndex = 0;
-            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -882,6 +892,8 @@
             this.gbNz.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudNz)).EndInit();
             this.tabPage3.ResumeLayout(false);
+            this.groupBox17.ResumeLayout(false);
+            this.groupBox17.PerformLayout();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             this.groupBox16.ResumeLayout(false);
@@ -900,8 +912,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudT3N1)).EndInit();
             this.groupBox8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudT3L1)).EndInit();
-            this.groupBox17.ResumeLayout(false);
-            this.groupBox17.PerformLayout();
             this.ResumeLayout(false);
 
         }
