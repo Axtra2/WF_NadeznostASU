@@ -21,7 +21,11 @@ namespace WF_NadeznostASU
             int i = 1;
             foreach (var item in elements.Reverse<Element>())
             {
-                var t = new MyCheckBox { Text = item.name, index = elements.Count - i, TabStop = false };
+                var t = new MyCheckBox { 
+                    Text = item.name, 
+                    index = elements.Count - i, 
+                    TabStop = false, // TODO: implement dynamic tab indexing
+                };
                 t.CheckedChanged += onCheckBoxUpdate;
                 panel2.Controls.Add(t);
                 ++i;
@@ -83,15 +87,19 @@ namespace WF_NadeznostASU
                     Dock = DockStyle.Top,
                     Height = labelH,
                     SplitterDistance = splitterDistance,
-                    IsSplitterFixed = true
+                    IsSplitterFixed = true,
+                    TabStop = false,
                 };
                 split.Panel1.Controls.Add(new Label
                 {
                     Text = elements[chkBx.index].name,
                     Dock = DockStyle.Fill,
-                    AutoEllipsis = true
+                    AutoEllipsis = true,
                 });
-                var upDown = new MyNumericUpDown { index = chkBx.index };
+                var upDown = new MyNumericUpDown { 
+                    index = chkBx.index, 
+                    TabStop = false, // TODO: implement dynamic tab indexing
+                };
                 upDown.ValueChanged += onQtyUpdate;
                 split.Panel2.Controls.Add(upDown);
                 pQty.Controls.Add(split);
