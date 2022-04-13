@@ -47,7 +47,7 @@
             this.groupBox13.Location = new System.Drawing.Point(12, 12);
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.Size = new System.Drawing.Size(290, 60);
-            this.groupBox13.TabIndex = 2;
+            this.groupBox13.TabIndex = 0;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "n_1 (последняя цифра шифра)";
             // 
@@ -82,7 +82,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 78);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(290, 60);
-            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "n_2 (предпоследняя цифра шифра)";
             // 
@@ -118,7 +118,7 @@
             this.bOk.Location = new System.Drawing.Point(12, 149);
             this.bOk.Name = "bOk";
             this.bOk.Size = new System.Drawing.Size(290, 29);
-            this.bOk.TabIndex = 3;
+            this.bOk.TabIndex = 2;
             this.bOk.Text = "OK";
             this.bOk.UseVisualStyleBackColor = true;
             this.bOk.Click += new System.EventHandler(this.bOk_Click);
