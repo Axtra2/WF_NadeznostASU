@@ -188,5 +188,62 @@ namespace WF_NadeznostASU
                 nud.Value = nud.Minimum;
             }
         }
+
+        void updateTask3()
+        {
+            List<double> lambdas = new List<double>
+            {
+                (double)nudT3L1.Value,
+                (double)nudT3L2.Value,
+                (double)nudT3L3.Value,
+                (double)nudT3L4.Value
+            };
+            List<uint> layers = new List<uint>
+            {
+                (uint)nudT3N1.Value,
+                (uint)nudT3N2.Value,
+                (uint)nudT3N3.Value,
+                (uint)nudT3N4.Value
+            };
+            for (int i = 0; i < layers.Count; i++)
+            {
+                if (layers[i] == 0)
+                {
+                    layers.RemoveAt(i);
+                    lambdas.RemoveAt(i);
+                    i--;
+                }
+            }
+            if (lambdas.Count > 0)
+                tbT3Tcp.Text = Task3.CalcT(lambdas.ToArray(), layers.ToArray()).ToString();
+            else
+                tbT3Tcp.Text = "";
+        }
+
+        void onTask3InputUpdate(object sender, EventArgs e)
+        {
+            updateTask3();
+        }
+
+        private void bT3Gen_Click(object sender, EventArgs e)
+        {
+            var gen = new Task3DataGen();
+            gen.ShowDialog();
+            if (gen.DialogResult == DialogResult.OK)
+            {
+                double[] lambdas;
+                uint[]   layers;
+                Task3.GenData((uint)gen.nudT3GenN1.Value, (uint)gen.nudT3GenN1.Value, out lambdas, out layers);
+                nudT3L1.Value = (decimal)lambdas[0];
+                nudT3L2.Value = (decimal)lambdas[1];
+                nudT3L3.Value = (decimal)lambdas[2];
+                nudT3L4.Value = (decimal)lambdas[3];
+
+                nudT3N1.Value = (decimal)layers[0];
+                nudT3N2.Value = (decimal)layers[1];
+                nudT3N3.Value = (decimal)layers[2];
+                nudT3N4.Value = (decimal)layers[3];
+            }
+        }
     }
 }
