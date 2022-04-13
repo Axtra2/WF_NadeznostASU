@@ -49,7 +49,7 @@
             this.groupBox13.Size = new System.Drawing.Size(290, 60);
             this.groupBox13.TabIndex = 2;
             this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "N1 (последняя цифра шифра)";
+            this.groupBox13.Text = "n_1 (последняя цифра шифра)";
             // 
             // nudT3GenN1
             // 
@@ -84,7 +84,7 @@
             this.groupBox1.Size = new System.Drawing.Size(290, 60);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "N2 (предпоследняя цифра шифра)";
+            this.groupBox1.Text = "n_2 (предпоследняя цифра шифра)";
             // 
             // nudT3GenN2
             // 

@@ -345,7 +345,7 @@
             this.groupBox6.Size = new System.Drawing.Size(337, 71);
             this.groupBox6.TabIndex = 11;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "lambda(t)";
+            this.groupBox6.Text = "lambda(t), 1/ч";
             // 
             // tbLambdaT
             // 
@@ -391,7 +391,7 @@
             this.groupBox7.Size = new System.Drawing.Size(337, 71);
             this.groupBox7.TabIndex = 10;
             this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "a(t)";
+            this.groupBox7.Text = "a(t), 1/ч";
             // 
             // tbAt
             // 
@@ -481,7 +481,7 @@
             this.dbDeltaT.Size = new System.Drawing.Size(107, 60);
             this.dbDeltaT.TabIndex = 2;
             this.dbDeltaT.TabStop = false;
-            this.dbDeltaT.Text = "Delta t";
+            this.dbDeltaT.Text = "delta t, ч";
             // 
             // nudDeltaT
             // 
@@ -504,7 +504,7 @@
             this.gbT.Size = new System.Drawing.Size(107, 60);
             this.gbT.TabIndex = 1;
             this.gbT.TabStop = false;
-            this.gbT.Text = "t";
+            this.gbT.Text = "t, ч";
             // 
             // nudT
             // 
@@ -570,7 +570,7 @@
             this.groupBox17.Size = new System.Drawing.Size(308, 71);
             this.groupBox17.TabIndex = 10;
             this.groupBox17.TabStop = false;
-            this.groupBox17.Text = "Pc(100)";
+            this.groupBox17.Text = "Pc(100 ч)";
             // 
             // tbT3Pc
             // 
@@ -600,7 +600,7 @@
             this.groupBox12.Size = new System.Drawing.Size(308, 71);
             this.groupBox12.TabIndex = 9;
             this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "Tcp";
+            this.groupBox12.Text = "Tcp, ч";
             // 
             // tbT3Tcp
             // 
@@ -620,7 +620,7 @@
             this.groupBox16.Size = new System.Drawing.Size(146, 60);
             this.groupBox16.TabIndex = 8;
             this.groupBox16.TabStop = false;
-            this.groupBox16.Text = "N4";
+            this.groupBox16.Text = "Элементов на слое 4";
             // 
             // nudT3N4
             // 
@@ -644,7 +644,7 @@
             this.groupBox11.Size = new System.Drawing.Size(146, 60);
             this.groupBox11.TabIndex = 7;
             this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Lambda 4";
+            this.groupBox11.Text = "lambda_4";
             // 
             // nudT3L4
             // 
@@ -679,7 +679,7 @@
             this.groupBox15.Size = new System.Drawing.Size(146, 60);
             this.groupBox15.TabIndex = 6;
             this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "N3";
+            this.groupBox15.Text = "Элементов на слое 3";
             // 
             // nudT3N3
             // 
@@ -703,7 +703,7 @@
             this.groupBox10.Size = new System.Drawing.Size(146, 60);
             this.groupBox10.TabIndex = 5;
             this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Lambda 3";
+            this.groupBox10.Text = "lambda_3";
             // 
             // nudT3L3
             // 
@@ -738,7 +738,7 @@
             this.groupBox14.Size = new System.Drawing.Size(146, 60);
             this.groupBox14.TabIndex = 4;
             this.groupBox14.TabStop = false;
-            this.groupBox14.Text = "N2";
+            this.groupBox14.Text = "Элементов на слое 2";
             // 
             // nudT3N2
             // 
@@ -762,7 +762,7 @@
             this.groupBox9.Size = new System.Drawing.Size(146, 60);
             this.groupBox9.TabIndex = 3;
             this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Lambda 2";
+            this.groupBox9.Text = "lambda_2";
             // 
             // nudT3L2
             // 
@@ -797,7 +797,7 @@
             this.groupBox13.Size = new System.Drawing.Size(146, 60);
             this.groupBox13.TabIndex = 2;
             this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "N1";
+            this.groupBox13.Text = "Элементов на слое 1";
             // 
             // nudT3N1
             // 
@@ -821,7 +821,7 @@
             this.groupBox8.Size = new System.Drawing.Size(146, 60);
             this.groupBox8.TabIndex = 1;
             this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Lambda 1";
+            this.groupBox8.Text = "lambda_1";
             // 
             // nudT3L1
             // 
