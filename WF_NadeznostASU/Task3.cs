@@ -104,5 +104,72 @@ namespace WF_NadeznostASU
             } while (NextState(ref state, layers));
             return sum;
         }
+
+        const int GS = 10;
+        const int Y_OFFSET = GS * 4;
+        const int CONNECT_W = GS;
+        static Size R_SIZE = new Size(GS*4, GS*2);
+        static Pen PEN = new Pen(Color.Black);
+        static Font FONT = new Font("Consolas", 10);
+        static Brush BRUSH = new SolidBrush(PEN.Color);
+        
+        static void DrawElement(Graphics g, Point p, int index)
+        {
+            var leftLineEnd = new Point(p.X + CONNECT_W, p.Y);
+            g.DrawLine(PEN, p, leftLineEnd);
+
+            var topLeft = new Point(leftLineEnd.X, leftLineEnd.Y - R_SIZE.Height / 2);
+            var r = new Rectangle(topLeft, R_SIZE);
+            g.DrawRectangle(PEN, r);
+
+            var format = new StringFormat
+            {
+                LineAlignment = StringAlignment.Center,
+                Alignment = StringAlignment.Center
+            };
+            g.DrawString("λ" + index.ToString(), FONT, BRUSH, r, format);
+
+            var rightLineStart = new Point(leftLineEnd.X + R_SIZE.Width, leftLineEnd.Y);
+            var rightLineEnd = new Point(rightLineStart.X + CONNECT_W, rightLineStart.Y);
+            g.DrawLine(PEN, rightLineStart, rightLineEnd);
+        }
+
+        static void DrawElements(Graphics g, Point p, int n, int index)
+        {
+            int halfH = Y_OFFSET * (n - 1) / 2;
+            
+            p.Offset(R_SIZE.Width + 2 * CONNECT_W, 0);
+            g.DrawLine(PEN, p, new Point(p.X, p.Y - halfH));
+            g.DrawLine(PEN, p, new Point(p.X, p.Y + halfH));
+
+            p.Offset(-R_SIZE.Width - 2 * CONNECT_W, 0);
+            g.DrawLine(PEN, p, new Point(p.X, p.Y - halfH));
+            g.DrawLine(PEN, p, new Point(p.X, p.Y + halfH));
+
+            p.Y -= halfH;
+            for (int i = 0; i < n; i++)
+            {
+                DrawElement(g, p, index);
+                p.Y += Y_OFFSET;
+            }
+        }
+
+        static int calcDiagramWidth(in uint[] layers)
+        {
+            return layers.Length * (3 * CONNECT_W + R_SIZE.Width) + CONNECT_W;
+        }
+
+        public static void DrawLayers(Graphics g, Point center, in uint[] layers, in int[] indices)
+        {
+            Point p = new Point(center.X - calcDiagramWidth(layers) / 2, center.Y);
+            for (int i = 0; i < layers.Length; i++)
+            {
+                g.DrawLine(PEN, p.X, p.Y, p.X + CONNECT_W, p.Y);
+                p.X += CONNECT_W;
+                DrawElements(g, p, (int)layers[i], indices[i]);
+                p.X += 2 * CONNECT_W + R_SIZE.Width;
+            }
+            g.DrawLine(PEN, p.X, p.Y, p.X + CONNECT_W, p.Y);
+        }
     }
 }

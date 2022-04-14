@@ -200,42 +200,60 @@ namespace WF_NadeznostASU
             }
         }
 
-        void updateTask3()
+        void getT3Data(out double[] lambdas, out uint[] layers, out int[] indices)
         {
-            List<double> lambdas = new List<double>
+            List<int> indicesL = new List<int> { 1, 2, 3, 4 };
+            List<double> lambdasL = new List<double>
             {
                 (double)nudT3L1.Value,
                 (double)nudT3L2.Value,
                 (double)nudT3L3.Value,
                 (double)nudT3L4.Value
             };
-            List<uint> layers = new List<uint>
+            List<uint> layersL = new List<uint>
             {
                 (uint)nudT3N1.Value,
                 (uint)nudT3N2.Value,
                 (uint)nudT3N3.Value,
                 (uint)nudT3N4.Value
             };
-            for (int i = 0; i < layers.Count; i++)
+            for (int i = 0; i < layersL.Count; i++)
             {
-                if (layers[i] == 0)
+                if (layersL[i] == 0)
                 {
-                    layers.RemoveAt(i);
-                    lambdas.RemoveAt(i);
+                    layersL.RemoveAt(i);
+                    lambdasL.RemoveAt(i);
+                    indicesL.RemoveAt(i);
                     i--;
                 }
             }
-            if (lambdas.Count > 0)
+            indices = indicesL.ToArray();
+            lambdas = lambdasL.ToArray();
+            layers = layersL.ToArray();
+        }
+
+        void updateTask3()
+        {
+            double[] lambdas;
+            uint[] layers;
+            int[] indices;
+            getT3Data(out lambdas, out layers, out indices);
+            if (lambdas.Length > 0)
             {
                 const double T = 100;
-                tbT3Tcp.Text = Task3.CalcT(lambdas.ToArray(), layers.ToArray()).ToString();
-                tbT3Pc.Text = Task3.CalcPc(lambdas.ToArray(), layers.ToArray(), T).ToString();
+                tbT3Tcp.Text = Task3.CalcT(lambdas, layers).ToString();
+                tbT3Pc.Text = Task3.CalcPc(lambdas, layers, T).ToString();
+
             }
             else
             {
                 tbT3Tcp.Text = "";
                 tbT3Pc.Text = "";
             }
+            var bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            var g = Graphics.FromImage(bmp);
+            drawT3Diagram(g, layers, indices);
+            pictureBox1.CreateGraphics().DrawImage(bmp, 0, 0);
         }
 
         void onTask3InputUpdate(object sender, EventArgs e)
@@ -252,6 +270,18 @@ namespace WF_NadeznostASU
                 double[] lambdas;
                 uint[]   layers;
                 Task3.GenData((uint)gen.nudT3GenN1.Value, (uint)gen.nudT3GenN2.Value, out lambdas, out layers);
+                
+                nudT3L1.ValueChanged -= onTask3InputUpdate;
+                nudT3L2.ValueChanged -= onTask3InputUpdate;
+                nudT3L3.ValueChanged -= onTask3InputUpdate;
+                nudT3L4.ValueChanged -= onTask3InputUpdate;
+
+                nudT3N1.ValueChanged -= onTask3InputUpdate;
+                nudT3N2.ValueChanged -= onTask3InputUpdate;
+                nudT3N3.ValueChanged -= onTask3InputUpdate;
+                nudT3N4.ValueChanged -= onTask3InputUpdate;
+
+
                 nudT3L1.Value = (decimal)lambdas[0];
                 nudT3L2.Value = (decimal)lambdas[1];
                 nudT3L3.Value = (decimal)lambdas[2];
@@ -261,7 +291,39 @@ namespace WF_NadeznostASU
                 nudT3N2.Value = (decimal)layers[1];
                 nudT3N3.Value = (decimal)layers[2];
                 nudT3N4.Value = (decimal)layers[3];
+
+
+                nudT3L1.ValueChanged += onTask3InputUpdate;
+                nudT3L2.ValueChanged += onTask3InputUpdate;
+                nudT3L3.ValueChanged += onTask3InputUpdate;
+                nudT3L4.ValueChanged += onTask3InputUpdate;
+
+                nudT3N1.ValueChanged += onTask3InputUpdate;
+                nudT3N2.ValueChanged += onTask3InputUpdate;
+                nudT3N3.ValueChanged += onTask3InputUpdate;
+                nudT3N4.ValueChanged += onTask3InputUpdate;
+
+                updateTask3();
             }
+        }
+
+        void drawT3Diagram(Graphics g, in uint[] layers, in int[] indices)
+        {
+            g.Clear(Color.White);
+            if (layers.Length > 0)
+                Task3.DrawLayers(g, new Point(pictureBox1.Width / 2, pictureBox1.Height / 2), layers, indices);
+        }
+
+        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        {
+            double[] _;
+            uint[] layers;
+            int[] indices;
+            getT3Data(out _, out layers, out indices);
+            var bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            var g = Graphics.FromImage(bmp);
+            drawT3Diagram(g, layers, indices);
+            e.Graphics.DrawImage(bmp, 0, 0);
         }
     }
 }
