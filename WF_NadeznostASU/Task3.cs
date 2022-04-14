@@ -113,7 +113,7 @@ namespace WF_NadeznostASU
         {
             var symbols = "₀₁₂₃₄₅₆₇₈₉";
             var charArray = number
-                .ToString()
+                .ToString("D")
                 .Select(ch => symbols[ch - '0']);
             return string.Join("", charArray);
         }
