@@ -109,11 +109,13 @@ namespace WF_NadeznostASU
         static Font FONT = new Font("Consolas", 10);
         static Brush BRUSH = new SolidBrush(PEN.Color);
 
-        static char subscript(int digit)
+        static string subscript(int number)
         {
-            if (digit < 0 || digit > 9) throw new ArgumentOutOfRangeException("Must be a single digit");
-            var indices = "₀₁₂₃₄₅₆₇₈₉";
-            return indices[digit];
+            var symbols = "₀₁₂₃₄₅₆₇₈₉";
+            var charArray = number
+                .ToString()
+                .Select(ch => symbols[ch - '0']);
+            return string.Join("", charArray);
         }
 
         static void DrawElement(Graphics g, Point p, int index)
