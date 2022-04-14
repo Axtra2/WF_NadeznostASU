@@ -108,7 +108,14 @@ namespace WF_NadeznostASU
         static Pen PEN = new Pen(Color.Black);
         static Font FONT = new Font("Consolas", 10);
         static Brush BRUSH = new SolidBrush(PEN.Color);
-        
+
+        static char subscript(int digit)
+        {
+            if (digit < 0 || digit > 9) throw new ArgumentOutOfRangeException("Must be a single digit");
+            var indices = "₀₁₂₃₄₅₆₇₈₉";
+            return indices[digit];
+        }
+
         static void DrawElement(Graphics g, Point p, int index)
         {
             var leftLineEnd = new Point(p.X + CONNECT_W, p.Y);
@@ -123,7 +130,8 @@ namespace WF_NadeznostASU
                 LineAlignment = StringAlignment.Center,
                 Alignment = StringAlignment.Center
             };
-            g.DrawString("λ" + index.ToString(), FONT, BRUSH, r, format);
+            g.DrawString("λ" + subscript(index), FONT, BRUSH, r, format);
+
 
             var rightLineStart = new Point(leftLineEnd.X + R_SIZE.Width, leftLineEnd.Y);
             var rightLineEnd = new Point(rightLineStart.X + CONNECT_W, rightLineStart.Y);
