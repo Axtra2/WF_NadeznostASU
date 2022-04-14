@@ -90,23 +90,28 @@ namespace WF_NadeznostASU
                     SplitterDistance = splitterDistance,
                     IsSplitterFixed = true,
                     TabStop = false,
-                    TabIndex = elements.Count - chkBx.index - 1,
+                    TabIndex = elements.Count - selected.Count,
                 };
-                split.Panel1.Controls.Add(new Label
+                
+                var label = new Label
                 {
                     Text = elements[chkBx.index].name,
                     Dock = DockStyle.Fill,
                     AutoEllipsis = true,
-                    
-                });
+
+                };
+
+                split.Panel1.Controls.Add(label);
+
                 var upDown = new MyNumericUpDown { 
                     index = chkBx.index, 
                     TabStop = true, 
                 };
                 upDown.ValueChanged += onQtyUpdate;
-                split.Panel2.Controls.Add(upDown);
-                pQty.Controls.Add(split);
 
+                split.Panel2.Controls.Add(upDown);
+
+                pQty.Controls.Add(split);
 
                 update(chkBx.index, 1);
             }

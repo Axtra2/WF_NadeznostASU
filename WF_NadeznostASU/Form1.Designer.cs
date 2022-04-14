@@ -347,7 +347,7 @@
             this.groupBox6.Size = new System.Drawing.Size(337, 71);
             this.groupBox6.TabIndex = 11;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "lambda(t), 1/ч";
+            this.groupBox6.Text = "λ(t), 1/ч";
             // 
             // tbLambdaT
             // 
@@ -370,7 +370,7 @@
             this.groupBox5.Size = new System.Drawing.Size(337, 71);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "P(t+delta t)";
+            this.groupBox5.Text = "P(t+Δt)";
             // 
             // tbPtDeltaT
             // 
@@ -437,7 +437,7 @@
             this.gbNDeltaT.Size = new System.Drawing.Size(107, 60);
             this.gbNDeltaT.TabIndex = 4;
             this.gbNDeltaT.TabStop = false;
-            this.gbNDeltaT.Text = "n(delta t)";
+            this.gbNDeltaT.Text = "n(Δt)";
             // 
             // nudNDeltaT
             // 
@@ -483,7 +483,7 @@
             this.dbDeltaT.Size = new System.Drawing.Size(107, 60);
             this.dbDeltaT.TabIndex = 2;
             this.dbDeltaT.TabStop = false;
-            this.dbDeltaT.Text = "delta t, ч";
+            this.dbDeltaT.Text = "Δt, ч";
             // 
             // nudDeltaT
             // 
@@ -529,7 +529,7 @@
             this.gbNz.Size = new System.Drawing.Size(107, 60);
             this.gbNz.TabIndex = 0;
             this.gbNz.TabStop = false;
-            this.gbNz.Text = "N_0";
+            this.gbNz.Text = "N₀";
             // 
             // nudNz
             // 
@@ -627,6 +627,7 @@
             // groupBox16
             // 
             this.groupBox16.Controls.Add(this.nudT3N4);
+            this.groupBox16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox16.Location = new System.Drawing.Point(130, 253);
             this.groupBox16.Name = "groupBox16";
             this.groupBox16.Size = new System.Drawing.Size(180, 60);
@@ -651,12 +652,13 @@
             // groupBox11
             // 
             this.groupBox11.Controls.Add(this.nudT3L4);
+            this.groupBox11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox11.Location = new System.Drawing.Point(8, 253);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(116, 60);
             this.groupBox11.TabIndex = 7;
             this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "lambda_4";
+            this.groupBox11.Text = "λ₄";
             // 
             // nudT3L4
             // 
@@ -686,6 +688,7 @@
             // groupBox15
             // 
             this.groupBox15.Controls.Add(this.nudT3N3);
+            this.groupBox15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox15.Location = new System.Drawing.Point(130, 187);
             this.groupBox15.Name = "groupBox15";
             this.groupBox15.Size = new System.Drawing.Size(180, 60);
@@ -710,12 +713,13 @@
             // groupBox10
             // 
             this.groupBox10.Controls.Add(this.nudT3L3);
+            this.groupBox10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox10.Location = new System.Drawing.Point(8, 187);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(116, 60);
             this.groupBox10.TabIndex = 5;
             this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "lambda_3";
+            this.groupBox10.Text = "λ₃ ";
             // 
             // nudT3L3
             // 
@@ -745,6 +749,7 @@
             // groupBox14
             // 
             this.groupBox14.Controls.Add(this.nudT3N2);
+            this.groupBox14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox14.Location = new System.Drawing.Point(130, 121);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Size = new System.Drawing.Size(180, 60);
@@ -769,12 +774,13 @@
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.nudT3L2);
+            this.groupBox9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox9.Location = new System.Drawing.Point(8, 121);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(116, 60);
             this.groupBox9.TabIndex = 3;
             this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "lambda_2";
+            this.groupBox9.Text = "λ₂";
             // 
             // nudT3L2
             // 
@@ -804,6 +810,7 @@
             // groupBox13
             // 
             this.groupBox13.Controls.Add(this.nudT3N1);
+            this.groupBox13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox13.Location = new System.Drawing.Point(130, 55);
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.Size = new System.Drawing.Size(180, 60);
@@ -828,12 +835,13 @@
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.nudT3L1);
+            this.groupBox8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox8.Location = new System.Drawing.Point(8, 55);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(116, 60);
             this.groupBox8.TabIndex = 1;
             this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "lambda_1";
+            this.groupBox8.Text = "λ₁";
             // 
             // nudT3L1
             // 
