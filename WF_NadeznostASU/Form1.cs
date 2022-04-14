@@ -158,7 +158,7 @@ namespace WF_NadeznostASU
         void updateTask2()
         {
             var Nz = (double)nudNz.Value;
-            //var t = (double) nudT.Value; // this value is not used but still provided??
+            //var t = (double) nudT.Value; // this value is not used
             var deltaT = (double)nudDeltaT.Value;
             var nt = (double)nudNt.Value;
             var nDeltaT = (double)nudNDeltaT.Value;
@@ -175,10 +175,7 @@ namespace WF_NadeznostASU
 
             var Pt = (Nz - nt) / Nz;
             var PtDeltaT = (Nz - (nt + nDeltaT)) / Nz;
-
             var Nm = (nt + nDeltaT) / 2;
-            //var nm = Nz - Nm; // this value is not used as well
-
             var aT = nDeltaT / (Nz * deltaT);
             var lambdaT = nDeltaT / (Nm * deltaT);
 
@@ -186,7 +183,6 @@ namespace WF_NadeznostASU
             tbPtDeltaT.Text = PtDeltaT.ToString();
             tbAt.Text = aT.ToString();
             tbLambdaT.Text = lambdaT.ToString();
-
         }
 
         void onInputUpdate(object sender, EventArgs e)
@@ -321,7 +317,6 @@ namespace WF_NadeznostASU
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
-            double[] _;
             uint[] layers;
             int[] indices;
             getT3Data(out _, out layers, out indices);

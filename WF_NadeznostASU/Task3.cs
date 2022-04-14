@@ -70,13 +70,9 @@ namespace WF_NadeznostASU
             if (lambdas.Length != l) throw new ArgumentException();
             if (l < 1) throw new ArgumentException();
 
-            double[] Ps = new double[l];
-            for (int i = 0; i < l; i++)
-            {
-                Ps[i] = Pl(lambdas[i], t, layers[i]);
-            }
-
-            return Ps.Aggregate(1.0, (a, b) => a * b);
+            return lambdas
+                .Zip(layers, (lambda, layer) => Pl(lambda, t, layer))
+                .Aggregate(1.0, (a, b) => a * b);
         }
 
         public static double CalcT(in double[] lambdas, in uint[] layers)
