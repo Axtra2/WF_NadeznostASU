@@ -251,8 +251,8 @@ namespace WF_NadeznostASU
                 tbT3Tcp.Text = "";
                 tbT3Pc.Text = "";
             }
-            var bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-            var g = Graphics.FromImage(bmp);
+            using var bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            using var g = Graphics.FromImage(bmp);
             drawT3Diagram(g, layers, indices);
             pictureBox1.CreateGraphics().DrawImage(bmp, 0, 0);
         }
@@ -320,8 +320,8 @@ namespace WF_NadeznostASU
             uint[] layers;
             int[] indices;
             getT3Data(out _, out layers, out indices);
-            var bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-            var g = Graphics.FromImage(bmp);
+            using var bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            using var g = Graphics.FromImage(bmp);
             drawT3Diagram(g, layers, indices);
             e.Graphics.DrawImage(bmp, 0, 0);
         }
