@@ -232,7 +232,7 @@
             this.Tc.Controls.Add(this.tbTc);
             this.Tc.Location = new System.Drawing.Point(6, 399);
             this.Tc.Name = "Tc";
-            this.Tc.Size = new System.Drawing.Size(334, 71);
+            this.Tc.Size = new System.Drawing.Size(337, 71);
             this.Tc.TabIndex = 7;
             this.Tc.TabStop = false;
             this.Tc.Text = "Тср.с, ч";
@@ -244,7 +244,7 @@
             this.tbTc.Location = new System.Drawing.Point(6, 27);
             this.tbTc.Name = "tbTc";
             this.tbTc.ReadOnly = true;
-            this.tbTc.Size = new System.Drawing.Size(322, 23);
+            this.tbTc.Size = new System.Drawing.Size(325, 23);
             this.tbTc.TabIndex = 0;
             this.tbTc.TabStop = false;
             // 
@@ -322,7 +322,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(792, 474);
+            this.tabPage2.Size = new System.Drawing.Size(793, 481);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Задача 2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -344,7 +344,7 @@
             this.groupBox6.Controls.Add(this.tbLambdaT);
             this.groupBox6.Location = new System.Drawing.Point(356, 312);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(337, 71);
+            this.groupBox6.Size = new System.Drawing.Size(338, 71);
             this.groupBox6.TabIndex = 11;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "λ(t), 1/ч";
@@ -356,7 +356,7 @@
             this.tbLambdaT.Location = new System.Drawing.Point(6, 27);
             this.tbLambdaT.Name = "tbLambdaT";
             this.tbLambdaT.ReadOnly = true;
-            this.tbLambdaT.Size = new System.Drawing.Size(325, 23);
+            this.tbLambdaT.Size = new System.Drawing.Size(326, 23);
             this.tbLambdaT.TabIndex = 0;
             this.tbLambdaT.TabStop = false;
             // 
@@ -367,7 +367,7 @@
             this.groupBox5.Controls.Add(this.tbPtDeltaT);
             this.groupBox5.Location = new System.Drawing.Point(356, 147);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(337, 71);
+            this.groupBox5.Size = new System.Drawing.Size(338, 71);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "P(t+Δt)";
@@ -379,7 +379,7 @@
             this.tbPtDeltaT.Location = new System.Drawing.Point(6, 27);
             this.tbPtDeltaT.Name = "tbPtDeltaT";
             this.tbPtDeltaT.ReadOnly = true;
-            this.tbPtDeltaT.Size = new System.Drawing.Size(325, 23);
+            this.tbPtDeltaT.Size = new System.Drawing.Size(326, 23);
             this.tbPtDeltaT.TabIndex = 0;
             this.tbPtDeltaT.TabStop = false;
             // 
@@ -390,7 +390,7 @@
             this.groupBox7.Controls.Add(this.tbAt);
             this.groupBox7.Location = new System.Drawing.Point(356, 229);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(337, 71);
+            this.groupBox7.Size = new System.Drawing.Size(338, 71);
             this.groupBox7.TabIndex = 10;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "a(t), 1/ч";
@@ -402,7 +402,7 @@
             this.tbAt.Location = new System.Drawing.Point(6, 27);
             this.tbAt.Name = "tbAt";
             this.tbAt.ReadOnly = true;
-            this.tbAt.Size = new System.Drawing.Size(325, 23);
+            this.tbAt.Size = new System.Drawing.Size(326, 23);
             this.tbAt.TabIndex = 0;
             this.tbAt.TabStop = false;
             // 
@@ -413,7 +413,7 @@
             this.groupBox4.Controls.Add(this.tbPt);
             this.groupBox4.Location = new System.Drawing.Point(356, 64);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(337, 71);
+            this.groupBox4.Size = new System.Drawing.Size(338, 71);
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "P(t)";
@@ -425,7 +425,7 @@
             this.tbPt.Location = new System.Drawing.Point(6, 27);
             this.tbPt.Name = "tbPt";
             this.tbPt.ReadOnly = true;
-            this.tbPt.Size = new System.Drawing.Size(325, 23);
+            this.tbPt.Size = new System.Drawing.Size(326, 23);
             this.tbPt.TabIndex = 0;
             this.tbPt.TabStop = false;
             // 
