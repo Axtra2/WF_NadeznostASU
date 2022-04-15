@@ -113,7 +113,6 @@ namespace WF_NadeznostASU
             if (chkBx == null) return;
             if (chkBx.Checked)
             {
-                selected.Insert(0, chkBx.index);
 
                 var split = new SplitContainer
                 {
@@ -144,8 +143,18 @@ namespace WF_NadeznostASU
                 split.Panel2.Controls.Add(upDown);
 
                 pQty.Controls.Add(split);
-
-                pQty.Controls.SetChildIndex(split, 0); // sends element to the back when rendered
+                int i = 0;
+                foreach (var item in pQty.Controls)
+                {
+                    if (((item as SplitContainer).Panel2.Controls[0] as MyNumericUpDown).index <= upDown.index)
+                    {
+                        break;
+                    }
+                    i++;
+                }
+                pQty.Controls.SetChildIndex(split, i); // sends element to the back when rendered
+                selected.Add(chkBx.index);
+                (selected[i], selected[selected.Count - 1]) = (selected[selected.Count - 1], selected[i]);
 
                 update(chkBx.index, 1);
             }
