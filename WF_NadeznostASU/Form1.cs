@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices;
+
 namespace WF_NadeznostASU
 {
     public partial class Form1 : Form
@@ -9,20 +11,29 @@ namespace WF_NadeznostASU
         const int splitterDistance = 130;
         double lambdaC = 0;
 
-        public static void SetDoubleBuffered(System.Windows.Forms.Control c)
+        //public static void SetDoubleBuffered(System.Windows.Forms.Control c)
+        //{
+        //    //Taxes: Remote Desktop Connection and painting
+        //    //http://blogs.msdn.com/oldnewthing/archive/2006/01/03/508694.aspx
+        //    if (System.Windows.Forms.SystemInformation.TerminalServerSession)
+        //        return;
+
+        //    System.Reflection.PropertyInfo aProp =
+        //          typeof(System.Windows.Forms.Control).GetProperty(
+        //                "DoubleBuffered",
+        //                System.Reflection.BindingFlags.NonPublic |
+        //                System.Reflection.BindingFlags.Instance);
+
+        //    aProp.SetValue(c, true, null);
+        //}
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
+        static extern IntPtr SendMessage(HandleRef hWnd, Int32 Msg, IntPtr wParam, IntPtr lParam);
+
+        static void EnableRepaint(HandleRef handle, bool enable)
         {
-            //Taxes: Remote Desktop Connection and painting
-            //http://blogs.msdn.com/oldnewthing/archive/2006/01/03/508694.aspx
-            if (System.Windows.Forms.SystemInformation.TerminalServerSession)
-                return;
-
-            System.Reflection.PropertyInfo aProp =
-                  typeof(System.Windows.Forms.Control).GetProperty(
-                        "DoubleBuffered",
-                        System.Reflection.BindingFlags.NonPublic |
-                        System.Reflection.BindingFlags.Instance);
-
-            aProp.SetValue(c, true, null);
+            const int WM_SETREDRAW = 0x000B;
+            SendMessage(handle, WM_SETREDRAW, new IntPtr(enable ? 1 : 0), IntPtr.Zero);
         }
 
         public Form1()
@@ -31,7 +42,7 @@ namespace WF_NadeznostASU
             nudTime.ValueChanged += onTimeUpdate;
             addCheckBoxes();
 
-            SetDoubleBuffered(pQty); // experimental
+            //SetDoubleBuffered(pQty); // experimental
         }
 
         void addCheckBoxes()
@@ -95,6 +106,9 @@ namespace WF_NadeznostASU
 
         void onCheckBoxUpdate(object sender, EventArgs e)
         {
+            HandleRef gh = new HandleRef(pQty, pQty.Handle);    // experimental
+            EnableRepaint(gh, false);                           //
+
             var chkBx = sender as MyCheckBox;
             if (chkBx == null) return;
             if (chkBx.Checked)
@@ -143,6 +157,9 @@ namespace WF_NadeznostASU
 
                 update(chkBx.index, 0);
             }
+
+            EnableRepaint(gh, true);    // experimental
+            pQty.Invalidate();          //
         }
 
         void bClear_Click(object sender, EventArgs e)
