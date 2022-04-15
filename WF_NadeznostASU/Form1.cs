@@ -122,7 +122,7 @@ namespace WF_NadeznostASU
                     SplitterDistance = splitterDistance,
                     IsSplitterFixed = true,
                     TabStop = false,
-                    TabIndex = elements.Count - selected.Count,
+                    TabIndex = selected.Count,
                 };
                 
                 var label = new Label
