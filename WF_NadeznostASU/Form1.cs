@@ -5,7 +5,6 @@ namespace WF_NadeznostASU
     public partial class Form1 : Form
     {
         List<Element> elements = Element.Parse("Data/everything.txt");
-        List<int> selected = new List<int>();
 
         const int labelH = 30;
         const int splitterDistance = 130;
@@ -73,7 +72,7 @@ namespace WF_NadeznostASU
 
         void update()
         {
-            if (selected.Count == 0)
+            if (pQty.Controls.Count == 0)
             {
                 tbPc.Text = "";
                 tbTc.Text = "";
@@ -104,6 +103,24 @@ namespace WF_NadeznostASU
             update();
         }
 
+        int BinarySearch(int l, int r, Func<int, bool> check)
+        {
+            while (true)
+            {
+                if (l >= r) break;
+                int m = (l + r) / 2;
+                if (check(m))
+                {
+                    r = m;
+                }
+                else
+                {
+                    l = m + 1;
+                }
+            }
+            return r;
+        }
+
         void onCheckBoxUpdate(object sender, EventArgs e)
         {
             HandleRef gh = new HandleRef(pQty, pQty.Handle);    // experimental
@@ -113,7 +130,6 @@ namespace WF_NadeznostASU
             if (chkBx == null) return;
             if (chkBx.Checked)
             {
-
                 var split = new SplitContainer
                 {
                     Dock = DockStyle.Top,
@@ -121,9 +137,9 @@ namespace WF_NadeznostASU
                     SplitterDistance = splitterDistance,
                     IsSplitterFixed = true,
                     TabStop = false,
-                    TabIndex = selected.Count,
+                    TabIndex = pQty.Controls.Count,
                 };
-                
+
                 var label = new Label
                 {
                     Text = elements[chkBx.index].name,
@@ -134,9 +150,9 @@ namespace WF_NadeznostASU
 
                 split.Panel1.Controls.Add(label);
 
-                var upDown = new MyNumericUpDown { 
-                    index = chkBx.index, 
-                    TabStop = true, 
+                var upDown = new MyNumericUpDown {
+                    index = chkBx.index,
+                    TabStop = true,
                 };
                 upDown.ValueChanged += onQtyUpdate;
 
@@ -144,37 +160,20 @@ namespace WF_NadeznostASU
 
                 pQty.Controls.Add(split);
 
-                var check = (int i) =>
-                {
-                    return ((pQty.Controls[i] as SplitContainer).Panel2.Controls[0] as MyNumericUpDown).index <= upDown.index;
-                };
-                int l = 0;
-                int r = pQty.Controls.Count - 1;
-
-                while (true)
-                {
-                    if (l >= r) break;
-                    int m = (l + r) / 2;
-                    if (check(m))
-                    {
-                        r = m;
-                    }
-                    else
-                    {
-                        l = m + 1;
-                    }
-                }
-                int i = r;
+                int i = BinarySearch(
+                    0, pQty.Controls.Count - 1,
+                    i => ((pQty.Controls[i] as SplitContainer).Panel2.Controls[0] as MyNumericUpDown).index <= upDown.index
+                );
                 pQty.Controls.SetChildIndex(split, i);
-                selected.Add(chkBx.index);
-                (selected[i], selected[selected.Count - 1]) = (selected[selected.Count - 1], selected[i]);
 
                 update(chkBx.index, 1);
             }
             else
             {
-                var i = selected.FindIndex(x => x == chkBx.index);
-                selected.RemoveAt(i);
+                int i = BinarySearch(
+                    0, pQty.Controls.Count - 1,
+                    i => ((pQty.Controls[i] as SplitContainer).Panel2.Controls[0] as MyNumericUpDown).index <= chkBx.index
+                );
                 pQty.Controls.RemoveAt(i);
 
                 update(chkBx.index, 0);
@@ -199,7 +198,6 @@ namespace WF_NadeznostASU
             }
             pQty.Controls.Clear();
             //pQty.Invalidate(); // sometimes scrollbar doesn't disappear properly, so forced update might help
-            selected.Clear();
             lambdaC = 0;
             update();
         }
