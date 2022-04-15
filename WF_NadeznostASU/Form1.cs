@@ -159,7 +159,7 @@ namespace WF_NadeznostASU
             }
 
             EnableRepaint(gh, true);    // experimental
-            pQty.Invalidate();          //
+            pQty.Invalidate(true);      //
         }
 
         void bClear_Click(object sender, EventArgs e)
