@@ -9,11 +9,29 @@ namespace WF_NadeznostASU
         const int splitterDistance = 130;
         double lambdaC = 0;
 
+        public static void SetDoubleBuffered(System.Windows.Forms.Control c)
+        {
+            //Taxes: Remote Desktop Connection and painting
+            //http://blogs.msdn.com/oldnewthing/archive/2006/01/03/508694.aspx
+            if (System.Windows.Forms.SystemInformation.TerminalServerSession)
+                return;
+
+            System.Reflection.PropertyInfo aProp =
+                  typeof(System.Windows.Forms.Control).GetProperty(
+                        "DoubleBuffered",
+                        System.Reflection.BindingFlags.NonPublic |
+                        System.Reflection.BindingFlags.Instance);
+
+            aProp.SetValue(c, true, null);
+        }
+
         public Form1()
         {
             InitializeComponent();
             nudTime.ValueChanged += onTimeUpdate;
             addCheckBoxes();
+
+            SetDoubleBuffered(pQty); // experimental
         }
 
         void addCheckBoxes()
@@ -112,6 +130,8 @@ namespace WF_NadeznostASU
                 split.Panel2.Controls.Add(upDown);
 
                 pQty.Controls.Add(split);
+
+                pQty.Controls.SetChildIndex(split, 0); // sends element to the back when rendered
 
                 update(chkBx.index, 1);
             }
