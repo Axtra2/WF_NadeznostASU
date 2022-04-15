@@ -113,7 +113,7 @@ namespace WF_NadeznostASU
             if (chkBx == null) return;
             if (chkBx.Checked)
             {
-                selected.Add(chkBx.index);
+                selected.Insert(0, chkBx.index);
 
                 var split = new SplitContainer
                 {
