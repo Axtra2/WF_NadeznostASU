@@ -143,16 +143,29 @@ namespace WF_NadeznostASU
                 split.Panel2.Controls.Add(upDown);
 
                 pQty.Controls.Add(split);
-                int i = 0;
-                foreach (var item in pQty.Controls)
+
+                var check = (int i) =>
                 {
-                    if (((item as SplitContainer).Panel2.Controls[0] as MyNumericUpDown).index <= upDown.index)
+                    return ((pQty.Controls[i] as SplitContainer).Panel2.Controls[0] as MyNumericUpDown).index <= upDown.index;
+                };
+                int l = 0;
+                int r = pQty.Controls.Count - 1;
+
+                while (true)
+                {
+                    if (l >= r) break;
+                    int m = (l + r) / 2;
+                    if (check(m))
                     {
-                        break;
+                        r = m;
                     }
-                    i++;
+                    else
+                    {
+                        l = m + 1;
+                    }
                 }
-                pQty.Controls.SetChildIndex(split, i); // sends element to the back when rendered
+                int i = r;
+                pQty.Controls.SetChildIndex(split, i);
                 selected.Add(chkBx.index);
                 (selected[i], selected[selected.Count - 1]) = (selected[selected.Count - 1], selected[i]);
 
