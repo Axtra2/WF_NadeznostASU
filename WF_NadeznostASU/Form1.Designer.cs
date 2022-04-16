@@ -658,7 +658,7 @@
             this.groupBox11.Size = new System.Drawing.Size(116, 60);
             this.groupBox11.TabIndex = 4;
             this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "λ₄";
+            this.groupBox11.Text = "λ₄, 1/час";
             // 
             // nudT3L4
             // 
@@ -724,7 +724,7 @@
             this.groupBox10.Size = new System.Drawing.Size(116, 60);
             this.groupBox10.TabIndex = 3;
             this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "λ₃ ";
+            this.groupBox10.Text = "λ₃, 1/час";
             // 
             // nudT3L3
             // 
@@ -790,7 +790,7 @@
             this.groupBox9.Size = new System.Drawing.Size(116, 60);
             this.groupBox9.TabIndex = 2;
             this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "λ₂";
+            this.groupBox9.Text = "λ₂, 1/час";
             // 
             // nudT3L2
             // 
@@ -856,7 +856,7 @@
             this.groupBox8.Size = new System.Drawing.Size(116, 60);
             this.groupBox8.TabIndex = 1;
             this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "λ₁";
+            this.groupBox8.Text = "λ₁, 1/час";
             // 
             // nudT3L1
             // 
