@@ -13,8 +13,7 @@ namespace WF_NadeznostASU
         [STAThread]
         static void Main()
         {
-            if (Environment.OSVersion.Version.Major >= 6)
-                SetProcessDPIAware(); // High DPI hack
+            SetProcessDPIAware(); // High DPI hack
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
