@@ -2,29 +2,14 @@ using System.Runtime.InteropServices;
 
 namespace WF_NadeznostASU
 {
+    [System.Runtime.Versioning.SupportedOSPlatform("windows7.0")]
     public partial class Form1 : Form
     {
-        List<Element> elements = Element.Parse("Data/everything.txt");
+        readonly List<Element> elements = Element.Parse("Data/everything.txt");
 
         const int labelH = 30;
         const int splitterDistance = 130;
         double lambdaC = 0;
-
-        //public static void SetDoubleBuffered(System.Windows.Forms.Control c)
-        //{
-        //    //Taxes: Remote Desktop Connection and painting
-        //    //http://blogs.msdn.com/oldnewthing/archive/2006/01/03/508694.aspx
-        //    if (System.Windows.Forms.SystemInformation.TerminalServerSession)
-        //        return;
-
-        //    System.Reflection.PropertyInfo aProp =
-        //          typeof(System.Windows.Forms.Control).GetProperty(
-        //                "DoubleBuffered",
-        //                System.Reflection.BindingFlags.NonPublic |
-        //                System.Reflection.BindingFlags.Instance);
-
-        //    aProp.SetValue(c, true, null);
-        //}
 
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
         static extern IntPtr SendMessage(HandleRef hWnd, Int32 Msg, IntPtr wParam, IntPtr lParam);
@@ -40,8 +25,6 @@ namespace WF_NadeznostASU
             InitializeComponent();
             nudTime.ValueChanged += onTimeUpdate;
             addCheckBoxes();
-
-            //SetDoubleBuffered(pQty); // experimental
         }
 
         void addCheckBoxes()
@@ -49,7 +32,8 @@ namespace WF_NadeznostASU
             int i = 1;
             foreach (var item in elements.Reverse<Element>())
             {
-                var t = new MyCheckBox {
+                var t = new MyCheckBox
+                {
                     Text = item.name,
                     index = elements.Count - i,
                     TabStop = true,
@@ -60,12 +44,12 @@ namespace WF_NadeznostASU
                 ++i;
             }
         }
-        double calcPc(double l, double t)
+        static double calcPc(double l, double t)
         {
             return Math.Exp(-l * t);
         }
 
-        double calcTc(double l)
+        static double calcTc(double l)
         {
             return 1 / l;
         }
@@ -103,7 +87,7 @@ namespace WF_NadeznostASU
             update();
         }
 
-        int BinarySearch(int l, int r, Func<int, bool> check)
+        static int BinarySearch(int l, int r, Func<int, bool> check)
         {
             while (true)
             {
@@ -123,8 +107,8 @@ namespace WF_NadeznostASU
 
         void onCheckBoxUpdate(object sender, EventArgs e)
         {
-            HandleRef gh = new HandleRef(pQty, pQty.Handle);    // experimental
-            EnableRepaint(gh, false);                           //
+            var gh = new HandleRef(pQty, pQty.Handle);
+            EnableRepaint(gh, false);
 
             var chkBx = sender as MyCheckBox;
             if (chkBx == null) return;
@@ -145,12 +129,12 @@ namespace WF_NadeznostASU
                     Text = elements[chkBx.index].name,
                     Dock = DockStyle.Fill,
                     AutoEllipsis = true,
-
                 };
 
                 split.Panel1.Controls.Add(label);
 
-                var upDown = new MyNumericUpDown {
+                var upDown = new MyNumericUpDown
+                {
                     index = chkBx.index,
                     TabStop = true,
                 };
@@ -179,8 +163,8 @@ namespace WF_NadeznostASU
                 update(chkBx.index, 0);
             }
 
-            EnableRepaint(gh, true);    // experimental
-            pQty.Invalidate(true);      //
+            EnableRepaint(gh, true);
+            pQty.Invalidate(true);
         }
 
         void bClear_Click(object sender, EventArgs e)
@@ -204,12 +188,12 @@ namespace WF_NadeznostASU
 
         private void Form1_ResizeBegin(object sender, EventArgs e)
         {
-            this.SuspendLayout();
+            SuspendLayout();
         }
 
         private void Form1_ResizeEnd(object sender, EventArgs e)
         {
-            this.ResumeLayout();
+            ResumeLayout();
         }
 
         void updateTask2()
@@ -260,15 +244,15 @@ namespace WF_NadeznostASU
 
         void getT3Data(out double[] lambdas, out uint[] layers, out int[] indices)
         {
-            List<int> indicesL = new List<int> { 1, 2, 3, 4 };
-            List<double> lambdasL = new List<double>
+            var indicesL = new List<int> { 1, 2, 3, 4 };
+            var lambdasL = new List<double>
             {
                 (double)nudT3L1.Value,
                 (double)nudT3L2.Value,
                 (double)nudT3L3.Value,
                 (double)nudT3L4.Value
             };
-            List<uint> layersL = new List<uint>
+            var layersL = new List<uint>
             {
                 (uint)nudT3N1.Value,
                 (uint)nudT3N2.Value,
@@ -326,9 +310,9 @@ namespace WF_NadeznostASU
             if (gen.DialogResult == DialogResult.OK)
             {
                 double[] lambdas;
-                uint[]   layers;
+                uint[] layers;
                 Task3.GenData((uint)gen.nudT3GenN1.Value, (uint)gen.nudT3GenN2.Value, out lambdas, out layers);
-                
+
                 nudT3L1.ValueChanged -= onTask3InputUpdate;
                 nudT3L2.ValueChanged -= onTask3InputUpdate;
                 nudT3L3.ValueChanged -= onTask3InputUpdate;
@@ -345,10 +329,10 @@ namespace WF_NadeznostASU
                 nudT3L3.Value = (decimal)lambdas[2];
                 nudT3L4.Value = (decimal)lambdas[3];
 
-                nudT3N1.Value = (decimal)layers[0];
-                nudT3N2.Value = (decimal)layers[1];
-                nudT3N3.Value = (decimal)layers[2];
-                nudT3N4.Value = (decimal)layers[3];
+                nudT3N1.Value = layers[0];
+                nudT3N2.Value = layers[1];
+                nudT3N3.Value = layers[2];
+                nudT3N4.Value = layers[3];
 
 
                 nudT3L1.ValueChanged += onTask3InputUpdate;
@@ -369,7 +353,9 @@ namespace WF_NadeznostASU
         {
             g.Clear(Color.White);
             if (layers.Length > 0)
+            {
                 Task3.DrawLayers(g, new Point(pictureBox1.Width / 2, pictureBox1.Height / 2), layers, indices);
+            }
         }
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)

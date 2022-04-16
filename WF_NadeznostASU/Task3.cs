@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WF_NadeznostASU
+﻿namespace WF_NadeznostASU
 {
+    [System.Runtime.Versioning.SupportedOSPlatform("windows")]
     internal class Task3
     {
         static uint Product(uint start, uint end, uint res = 1)
@@ -45,12 +40,12 @@ namespace WF_NadeznostASU
             if (n1 % 2 == 0)
             {
                 if (n2 % 2 == 0) layers = new uint[] { 3, 1, 1, 1 };
-                else             layers = new uint[] { 3, 2, 1, 1 };
+                else layers = new uint[] { 3, 2, 1, 1 };
             }
             else
             {
                 if (n2 % 2 == 0) layers = new uint[] { 2, 3, 2, 0 };
-                else             layers = new uint[] { 3, 3, 1, 0 };
+                else layers = new uint[] { 3, 3, 1, 0 };
             }
         }
 
@@ -104,7 +99,7 @@ namespace WF_NadeznostASU
         const int GS = 10;
         const int Y_OFFSET = GS * 4;
         const int CONNECT_W = GS;
-        static Size R_SIZE = new Size(GS*4, GS*2);
+        static Size R_SIZE = new Size(GS * 4, GS * 2);
         static Pen PEN = new Pen(Color.Black);
         static Font FONT = new Font("Consolas", 10);
         static Brush BRUSH = new SolidBrush(PEN.Color);
@@ -143,7 +138,7 @@ namespace WF_NadeznostASU
         static void DrawElements(Graphics g, Point p, int n, int index)
         {
             int halfH = Y_OFFSET * (n - 1) / 2;
-            
+
             p.Offset(R_SIZE.Width + 2 * CONNECT_W, 0);
             g.DrawLine(PEN, p, new Point(p.X, p.Y - halfH));
             g.DrawLine(PEN, p, new Point(p.X, p.Y + halfH));

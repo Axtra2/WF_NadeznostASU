@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WF_NadeznostASU
+﻿namespace WF_NadeznostASU
 {
     internal class Element
     {
@@ -24,7 +18,7 @@ namespace WF_NadeznostASU
                 var e = new Element
                 {
                     name = a[0],
-                    value = m * Double.Parse(a[a.Length - 1]),
+                    value = m * double.Parse(a[^1]),
                     id = i,
                     qty = 0
                 };

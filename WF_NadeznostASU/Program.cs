@@ -1,5 +1,6 @@
 namespace WF_NadeznostASU
 {
+    [System.Runtime.Versioning.SupportedOSPlatform("windows7.0")]
     internal static class Program
     {
         // For high DPI hack
