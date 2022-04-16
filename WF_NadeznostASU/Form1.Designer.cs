@@ -664,6 +664,11 @@
             // 
             this.nudT3L4.DecimalPlaces = 6;
             this.nudT3L4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nudT3L4.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            262144});
             this.nudT3L4.Location = new System.Drawing.Point(3, 19);
             this.nudT3L4.Maximum = new decimal(new int[] {
             100000,
@@ -725,6 +730,11 @@
             // 
             this.nudT3L3.DecimalPlaces = 6;
             this.nudT3L3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nudT3L3.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            262144});
             this.nudT3L3.Location = new System.Drawing.Point(3, 19);
             this.nudT3L3.Maximum = new decimal(new int[] {
             100000,
@@ -786,6 +796,11 @@
             // 
             this.nudT3L2.DecimalPlaces = 6;
             this.nudT3L2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nudT3L2.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            262144});
             this.nudT3L2.Location = new System.Drawing.Point(3, 19);
             this.nudT3L2.Maximum = new decimal(new int[] {
             100000,
@@ -847,6 +862,11 @@
             // 
             this.nudT3L1.DecimalPlaces = 6;
             this.nudT3L1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nudT3L1.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            262144});
             this.nudT3L1.Location = new System.Drawing.Point(3, 19);
             this.nudT3L1.Maximum = new decimal(new int[] {
             100000,
