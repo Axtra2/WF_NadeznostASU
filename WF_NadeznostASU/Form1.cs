@@ -5,12 +5,6 @@ namespace WF_NadeznostASU
     [System.Runtime.Versioning.SupportedOSPlatform("windows7.0")]
     public partial class Form1 : Form
     {
-        readonly List<Element> elements = Element.Parse("Data/everything.txt");
-
-        const int labelH = 30;
-        const int splitterDistance = 130;
-        double lambdaC = 0;
-
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
         static extern IntPtr SendMessage(HandleRef hWnd, Int32 Msg, IntPtr wParam, IntPtr lParam);
 
@@ -23,38 +17,47 @@ namespace WF_NadeznostASU
         public Form1()
         {
             InitializeComponent();
-            nudTime.ValueChanged += onTimeUpdate;
-            addCheckBoxes();
+            AddCheckBoxes();
         }
 
-        void addCheckBoxes()
+        private void Form1_ResizeBegin(object sender, EventArgs e)
+        {
+            SuspendLayout();
+        }
+
+        private void Form1_ResizeEnd(object sender, EventArgs e)
+        {
+            ResumeLayout();
+        }
+
+
+        #region Task 1 Implementaion
+
+        const int LABEL_H = 30;
+        const int SPLITTER_DISTANCE = 130;
+
+        readonly List<Element> elements = Element.Parse("Data/everything.txt");
+        double lambdaC = 0;
+
+        void AddCheckBoxes()
         {
             int i = 1;
             foreach (var item in elements.Reverse<Element>())
             {
-                var t = new MyCheckBox
+                var chkBx = new MyCheckBox
                 {
                     Text = item.name,
                     index = elements.Count - i,
                     TabStop = true,
                     TabIndex = elements.Count - i,
                 };
-                t.CheckedChanged += onCheckBoxUpdate;
-                panel2.Controls.Add(t);
+                chkBx.CheckedChanged += OnCheckBoxUpdate;
+                pChkBxs.Controls.Add(chkBx);
                 ++i;
             }
         }
-        static double calcPc(double l, double t)
-        {
-            return Math.Exp(-l * t);
-        }
 
-        static double calcTc(double l)
-        {
-            return 1 / l;
-        }
-
-        void update()
+        void UpdateTask1()
         {
             if (pQty.Controls.Count == 0)
             {
@@ -63,28 +66,28 @@ namespace WF_NadeznostASU
             }
             else
             {
-                tbPc.Text = calcPc(lambdaC, (double)nudTime.Value).ToString();
-                tbTc.Text = calcTc(lambdaC).ToString();
+                tbPc.Text = Task1.CalcPc(lambdaC, (double)nudTime.Value).ToString();
+                tbTc.Text = Task1.CalcTc(lambdaC).ToString();
             }
         }
 
-        void update(int i, int newQty)
+        void UpdateTask1Values(int index, int newQty)
         {
-            lambdaC += (newQty - elements[i].qty) * elements[i].value;
-            elements[i].qty = newQty;
-            update();
+            lambdaC += (newQty - elements[index].qty) * elements[index].value;
+            elements[index].qty = newQty;
+            UpdateTask1();
         }
 
-        void onQtyUpdate(object sender, EventArgs e)
+        void OnQtyUpdate(object sender, EventArgs e)
         {
             var upDown = sender as MyNumericUpDown;
             if (upDown == null) return;
-            update(upDown.index, (int)upDown.Value);
+            UpdateTask1Values(upDown.index, (int)upDown.Value);
         }
 
-        void onTimeUpdate(object sender, EventArgs e)
+        void OnTimeUpdate(object sender, EventArgs e)
         {
-            update();
+            UpdateTask1();
         }
 
         static int BinarySearch(int l, int r, Func<int, bool> check)
@@ -105,7 +108,7 @@ namespace WF_NadeznostASU
             return r;
         }
 
-        void onCheckBoxUpdate(object sender, EventArgs e)
+        void OnCheckBoxUpdate(object sender, EventArgs e)
         {
             var gh = new HandleRef(pQty, pQty.Handle);
             EnableRepaint(gh, false);
@@ -117,8 +120,8 @@ namespace WF_NadeznostASU
                 var split = new SplitContainer
                 {
                     Dock = DockStyle.Top,
-                    Height = labelH,
-                    SplitterDistance = splitterDistance,
+                    Height = LABEL_H,
+                    SplitterDistance = SPLITTER_DISTANCE,
                     IsSplitterFixed = true,
                     TabStop = false,
                     TabIndex = pQty.Controls.Count,
@@ -138,7 +141,7 @@ namespace WF_NadeznostASU
                     index = chkBx.index,
                     TabStop = true,
                 };
-                upDown.ValueChanged += onQtyUpdate;
+                upDown.ValueChanged += OnQtyUpdate;
 
                 split.Panel2.Controls.Add(upDown);
 
@@ -150,7 +153,7 @@ namespace WF_NadeznostASU
                 );
                 pQty.Controls.SetChildIndex(split, i);
 
-                update(chkBx.index, 1);
+                UpdateTask1Values(chkBx.index, 1);
             }
             else
             {
@@ -160,7 +163,7 @@ namespace WF_NadeznostASU
                 );
                 pQty.Controls.RemoveAt(i);
 
-                update(chkBx.index, 0);
+                UpdateTask1Values(chkBx.index, 0);
             }
 
             EnableRepaint(gh, true);
@@ -169,12 +172,12 @@ namespace WF_NadeznostASU
 
         void bClear_Click(object sender, EventArgs e)
         {
-            foreach (var item in panel2.Controls)
+            foreach (var item in pChkBxs.Controls)
             {
                 var t = item as MyCheckBox;
-                t.CheckedChanged -= onCheckBoxUpdate;
+                t.CheckedChanged -= OnCheckBoxUpdate;
                 t.Checked = false;
-                t.CheckedChanged += onCheckBoxUpdate;
+                t.CheckedChanged += OnCheckBoxUpdate;
             }
             foreach (var item in elements)
             {
@@ -183,29 +186,23 @@ namespace WF_NadeznostASU
             pQty.Controls.Clear();
             //pQty.Invalidate(); // sometimes scrollbar doesn't disappear properly, so forced update might help
             lambdaC = 0;
-            update();
+            UpdateTask1();
         }
 
-        private void Form1_ResizeBegin(object sender, EventArgs e)
-        {
-            SuspendLayout();
-        }
+        #endregion
 
-        private void Form1_ResizeEnd(object sender, EventArgs e)
-        {
-            ResumeLayout();
-        }
+        #region Task 2 Implementaion
 
-        void updateTask2()
+        void UpdateTask2()
         {
-            var Nz = (double)nudNz.Value;
+            var N0 = (double)nudN0.Value;
             //var t = (double) nudT.Value; // this value is not used
             var deltaT = (double)nudDeltaT.Value;
             var nt = (double)nudNt.Value;
             var nDeltaT = (double)nudNDeltaT.Value;
 
             const double EPS = 1e-7;
-            if (Nz < EPS || deltaT < EPS || nt + nDeltaT < EPS || nt + nDeltaT > Nz)
+            if (N0 < EPS || deltaT < EPS || nt + nDeltaT < EPS || nt + nDeltaT > N0)
             {
                 tbPt.Text = "";
                 tbPtDeltaT.Text = "";
@@ -214,21 +211,15 @@ namespace WF_NadeznostASU
                 return;
             }
 
-            var Pt = (Nz - nt) / Nz;
-            var PtDeltaT = (Nz - (nt + nDeltaT)) / Nz;
-            var Nm = (nt + nDeltaT) / 2;
-            var aT = nDeltaT / (Nz * deltaT);
-            var lambdaT = nDeltaT / (Nm * deltaT);
-
-            tbPt.Text = Pt.ToString();
-            tbPtDeltaT.Text = PtDeltaT.ToString();
-            tbAt.Text = aT.ToString();
-            tbLambdaT.Text = lambdaT.ToString();
+            tbPt.Text = Task2.CalcPt(N0, nt).ToString();
+            tbPtDeltaT.Text = Task2.CalcPtDeltaT(N0, nt, nDeltaT).ToString();
+            tbAt.Text = Task2.CalcAt(N0, deltaT, nDeltaT).ToString();
+            tbLambdaT.Text = Task2.CalcLambdat(nt, deltaT, nDeltaT).ToString();
         }
 
-        void onInputUpdate(object sender, EventArgs e)
+        void OnInputUpdate(object sender, EventArgs e)
         {
-            updateTask2();
+            UpdateTask2();
         }
 
         void bClear2_Click(object sender, EventArgs e)
@@ -242,7 +233,11 @@ namespace WF_NadeznostASU
             }
         }
 
-        void getT3Data(out double[] lambdas, out uint[] layers, out int[] indices)
+        #endregion
+
+        #region Task 3 Implementaion
+
+        void GetT3Data(out double[] lambdas, out uint[] layers, out int[] indices)
         {
             var indicesL = new List<int> { 1, 2, 3, 4 };
             var lambdasL = new List<double>
@@ -274,12 +269,12 @@ namespace WF_NadeznostASU
             layers = layersL.ToArray();
         }
 
-        void updateTask3()
+        void UpdateTask3()
         {
             double[] lambdas;
             uint[] layers;
             int[] indices;
-            getT3Data(out lambdas, out layers, out indices);
+            GetT3Data(out lambdas, out layers, out indices);
             if (lambdas.Length > 0)
             {
                 const double T = 100;
@@ -292,15 +287,15 @@ namespace WF_NadeznostASU
                 tbT3Tcp.Text = "";
                 tbT3Pc.Text = "";
             }
-            using var bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            using var bmp = new Bitmap(pbDiagram.Width, pbDiagram.Height);
             using var g = Graphics.FromImage(bmp);
-            drawT3Diagram(g, layers, indices);
-            pictureBox1.CreateGraphics().DrawImage(bmp, 0, 0);
+            DrawT3Diagram(g, layers, indices);
+            pbDiagram.CreateGraphics().DrawImage(bmp, 0, 0);
         }
 
-        void onTask3InputUpdate(object sender, EventArgs e)
+        void OnTask3InputUpdate(object sender, EventArgs e)
         {
-            updateTask3();
+            UpdateTask3();
         }
 
         private void bT3Gen_Click(object sender, EventArgs e)
@@ -313,15 +308,15 @@ namespace WF_NadeznostASU
                 uint[] layers;
                 Task3.GenData((uint)gen.nudT3GenN1.Value, (uint)gen.nudT3GenN2.Value, out lambdas, out layers);
 
-                nudT3L1.ValueChanged -= onTask3InputUpdate;
-                nudT3L2.ValueChanged -= onTask3InputUpdate;
-                nudT3L3.ValueChanged -= onTask3InputUpdate;
-                nudT3L4.ValueChanged -= onTask3InputUpdate;
+                nudT3L1.ValueChanged -= OnTask3InputUpdate;
+                nudT3L2.ValueChanged -= OnTask3InputUpdate;
+                nudT3L3.ValueChanged -= OnTask3InputUpdate;
+                nudT3L4.ValueChanged -= OnTask3InputUpdate;
 
-                nudT3N1.ValueChanged -= onTask3InputUpdate;
-                nudT3N2.ValueChanged -= onTask3InputUpdate;
-                nudT3N3.ValueChanged -= onTask3InputUpdate;
-                nudT3N4.ValueChanged -= onTask3InputUpdate;
+                nudT3N1.ValueChanged -= OnTask3InputUpdate;
+                nudT3N2.ValueChanged -= OnTask3InputUpdate;
+                nudT3N3.ValueChanged -= OnTask3InputUpdate;
+                nudT3N4.ValueChanged -= OnTask3InputUpdate;
 
 
                 nudT3L1.Value = (decimal)lambdas[0];
@@ -335,38 +330,40 @@ namespace WF_NadeznostASU
                 nudT3N4.Value = layers[3];
 
 
-                nudT3L1.ValueChanged += onTask3InputUpdate;
-                nudT3L2.ValueChanged += onTask3InputUpdate;
-                nudT3L3.ValueChanged += onTask3InputUpdate;
-                nudT3L4.ValueChanged += onTask3InputUpdate;
+                nudT3L1.ValueChanged += OnTask3InputUpdate;
+                nudT3L2.ValueChanged += OnTask3InputUpdate;
+                nudT3L3.ValueChanged += OnTask3InputUpdate;
+                nudT3L4.ValueChanged += OnTask3InputUpdate;
 
-                nudT3N1.ValueChanged += onTask3InputUpdate;
-                nudT3N2.ValueChanged += onTask3InputUpdate;
-                nudT3N3.ValueChanged += onTask3InputUpdate;
-                nudT3N4.ValueChanged += onTask3InputUpdate;
+                nudT3N1.ValueChanged += OnTask3InputUpdate;
+                nudT3N2.ValueChanged += OnTask3InputUpdate;
+                nudT3N3.ValueChanged += OnTask3InputUpdate;
+                nudT3N4.ValueChanged += OnTask3InputUpdate;
 
-                updateTask3();
+                UpdateTask3();
             }
         }
 
-        void drawT3Diagram(Graphics g, in uint[] layers, in int[] indices)
+        void DrawT3Diagram(Graphics g, in uint[] layers, in int[] indices)
         {
             g.Clear(Color.White);
             if (layers.Length > 0)
             {
-                Task3.DrawLayers(g, new Point(pictureBox1.Width / 2, pictureBox1.Height / 2), layers, indices);
+                Task3.DrawLayers(g, new Point(pbDiagram.Width / 2, pbDiagram.Height / 2), layers, indices);
             }
         }
 
-        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        private void pbDiagram_Paint(object sender, PaintEventArgs e)
         {
             uint[] layers;
             int[] indices;
-            getT3Data(out _, out layers, out indices);
-            using var bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            GetT3Data(out _, out layers, out indices);
+            using var bmp = new Bitmap(pbDiagram.Width, pbDiagram.Height);
             using var g = Graphics.FromImage(bmp);
-            drawT3Diagram(g, layers, indices);
+            DrawT3Diagram(g, layers, indices);
             e.Graphics.DrawImage(bmp, 0, 0);
         }
+
+        #endregion
     }
 }

@@ -10,7 +10,7 @@
             return Product(start + 1, end, res);
         }
 
-        static uint C(uint n, uint k)
+        static uint Combination(uint n, uint k)
         {
             if (k == 0) return 1;
             return Product(n - k + 1, n) / Product(1, k);
@@ -49,14 +49,14 @@
             }
         }
 
-        private static double P(double lambda, double t)
+        private static double CalcP(double lambda, double t)
         {
             return Math.Exp(-1 * lambda * t);
         }
 
-        private static double Pl(double lambda, double t, double layer)
+        private static double CalcPl(double lambda, double t, double layer)
         {
-            return 1 - Math.Pow(1 - P(lambda, t), layer);
+            return 1 - Math.Pow(1 - CalcP(lambda, t), layer);
         }
 
         public static double CalcPc(in double[] lambdas, in uint[] layers, double t)
@@ -66,7 +66,7 @@
             if (l < 1) throw new ArgumentException();
 
             return lambdas
-                .Zip(layers, (lambda, layer) => Pl(lambda, t, layer))
+                .Zip(layers, (lambda, layer) => CalcPl(lambda, t, layer))
                 .Aggregate(1.0, (a, b) => a * b);
         }
 
@@ -83,7 +83,7 @@
                 long numerator = 1;
                 for (int i = 0; i < l; i++)
                 {
-                    numerator *= C(layers[i], state[i]);
+                    numerator *= Combination(layers[i], state[i]);
                     if (state[i] % 2 == 0) numerator *= -1;
                 }
                 double denominator = 0.0;
@@ -162,7 +162,7 @@
 
         public static void DrawLayers(Graphics g, Point center, in uint[] layers, in int[] indices)
         {
-            Point p = new Point(center.X - calcDiagramWidth(layers) / 2, center.Y);
+            var p = new Point(center.X - calcDiagramWidth(layers) / 2, center.Y);
             for (int i = 0; i < layers.Length; i++)
             {
                 g.DrawLine(PEN, p.X, p.Y, p.X + CONNECT_W, p.Y);
