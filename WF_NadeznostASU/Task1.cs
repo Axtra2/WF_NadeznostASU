@@ -2,14 +2,14 @@
 {
     internal class Task1
     {
-        public static decimal CalcPc(double l, double t)
+        public static double CalcPc(double l, double t)
         {
-            return (decimal)(Math.Exp(-l * t));
+            return Math.Exp(-l * t);
         }
 
-        public static decimal CalcTc(double l)
+        public static double CalcTc(double l)
         {
-            return (decimal)(1 / l);
+            return 1 / l;
         }
     }
 }

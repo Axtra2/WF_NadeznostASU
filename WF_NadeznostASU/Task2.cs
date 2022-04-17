@@ -1,6 +1,5 @@
 ﻿namespace WF_NadeznostASU
 {
-    [System.Runtime.Versioning.SupportedOSPlatform("windows")]
     internal class Task2
     {
         public static decimal CalcPt(double N0, double nt)

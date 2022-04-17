@@ -2,7 +2,6 @@ using System.Runtime.InteropServices;
 
 namespace WF_NadeznostASU
 {
-    [System.Runtime.Versioning.SupportedOSPlatform("windows7.0")]
     public partial class Form1 : Form
     {
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]

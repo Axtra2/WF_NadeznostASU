@@ -1,6 +1,5 @@
 ﻿namespace WF_NadeznostASU
 {
-    [System.Runtime.Versioning.SupportedOSPlatform("windows")]
     internal class Task3
     {
         static uint Product(uint start, uint end, uint res = 1)
@@ -49,14 +48,9 @@
             }
         }
 
-        private static double CalcP(double lambda, double t)
-        {
-            return Math.Exp(-1 * lambda * t);
-        }
-
         private static double CalcPl(double lambda, double t, double layer)
         {
-            return 1 - Math.Pow(1 - CalcP(lambda, t), layer);
+            return 1 - Math.Pow(1 - Task1.CalcPc(lambda, t), layer);
         }
 
         public static double CalcPc(in double[] lambdas, in uint[] layers, double t)
