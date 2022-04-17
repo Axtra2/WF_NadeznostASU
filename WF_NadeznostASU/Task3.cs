@@ -98,7 +98,7 @@
         static Font FONT = new Font("Consolas", 10);
         static Brush BRUSH = new SolidBrush(PEN.Color);
 
-        static string subscript(int number)
+        static string Subscript(int number)
         {
             var symbols = "₀₁₂₃₄₅₆₇₈₉";
             var charArray = number
@@ -121,7 +121,7 @@
                 LineAlignment = StringAlignment.Center,
                 Alignment = StringAlignment.Center
             };
-            g.DrawString("λ" + subscript(index), FONT, BRUSH, r, format);
+            g.DrawString("λ" + Subscript(index), FONT, BRUSH, r, format);
 
 
             var rightLineStart = new Point(leftLineEnd.X + R_SIZE.Width, leftLineEnd.Y);
@@ -149,14 +149,14 @@
             }
         }
 
-        static int calcDiagramWidth(in uint[] layers)
+        static int CalcDiagramWidth(in uint[] layers)
         {
             return layers.Length * (3 * CONNECT_W + R_SIZE.Width) + CONNECT_W;
         }
 
         public static void DrawLayers(Graphics g, Point center, in uint[] layers, in int[] indices)
         {
-            var p = new Point(center.X - calcDiagramWidth(layers) / 2, center.Y);
+            var p = new Point(center.X - CalcDiagramWidth(layers) / 2, center.Y);
             for (int i = 0; i < layers.Length; i++)
             {
                 g.DrawLine(PEN, p.X, p.Y, p.X + CONNECT_W, p.Y);
